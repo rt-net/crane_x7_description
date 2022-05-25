@@ -37,6 +37,8 @@ Display a CRANE-X7 robot model on RViz with the following command:
 roslaunch crane_x7_description display.launch 
 ```
 
+![display_launch](https://rt-net.github.io/images/crane-x7/display_launch.png)
+
 ## Proprietary Rights
 
 CRANE-X7 is an arm robot developed by RT Corporation for research purposes.

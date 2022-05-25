@@ -38,6 +38,8 @@ source devel/setup.bash
 roslaunch crane_x7_description display.launch 
 ```
 
+![display_launch](https://rt-net.github.io/images/crane-x7/display_launch.png)
+
 ## 知的財産権について
 
 CRANE-X7は、アールティが開発した研究用アームロボットです。
