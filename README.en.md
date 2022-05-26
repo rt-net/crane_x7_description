@@ -2,6 +2,8 @@
 
 # crane_x7_description
 
+[![industrial_ci](https://github.com/rt-net/crane_x7_description/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/crane_x7_description/actions?query=workflow%3Aindustrial_ci+branch%3Amaster)
+
 ROS package with URDF description macro for [CRANE-X7](https://rt-net.jp/products/crane-x7/).
 
 This ROS packages was separated from [rt-net/crane_x7_ros](https://github.com/rt-net/crane_x7_ros).
@@ -34,6 +36,8 @@ Display a CRANE-X7 robot model on RViz with the following command:
 ```sh
 roslaunch crane_x7_description display.launch 
 ```
+
+![display_launch](https://rt-net.github.io/images/crane-x7/display_launch.png)
 
 ## Proprietary Rights
 
