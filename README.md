@@ -2,7 +2,7 @@
 
 # crane_x7_description
 
-[![industrial_ci](https://github.com/rt-net/crane_x7_description/workflows/industrial_ci/badge.svg?branch=ros2)](https://github.com/rt-net/crane_x7_description/actions?query=workflow%3Aindustrial_ci+branch%3Aros2)
+[![industrial_ci](https://github.com/rt-net/crane_x7_description/actions/workflows/industrial_ci.yml/badge.svg?branch=ros2)](https://github.com/rt-net/crane_x7_description/actions/workflows/industrial_ci.yml)
 
 [CRANE-X7](https://rt-net.jp/products/crane-x7/)のURDFファイルを含むROS 2パッケージです。
 
