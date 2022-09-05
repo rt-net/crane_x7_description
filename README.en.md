@@ -10,7 +10,6 @@ ROS 2 package with URDF description macro for [CRANE-X7](https://rt-net.jp/produ
 
 - Foxy
 - Galactic
-- Humble
 
 ## Installation
 

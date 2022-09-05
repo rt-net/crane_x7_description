@@ -10,7 +10,6 @@
 
 - Foxy
 - Galactic
-- Humble
 
 ## インストール方法
 
