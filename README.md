@@ -13,8 +13,8 @@
 
 ### ROS 1
 
-- [Melodic](https://github.com/rt-net/crane_x7_description/tree/v1.0.0)
-- [Noetic](https://github.com/rt-net/crane_x7_description/tree/v1.0.0)
+- [Melodic](https://github.com/rt-net/crane_x7_description/tree/master)
+- [Noetic](https://github.com/rt-net/crane_x7_description/tree/master)
 
 ## インストール方法
 
