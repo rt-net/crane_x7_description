@@ -18,8 +18,8 @@ jobs:
           # Ref: https://github.com/ros-industrial/industrial_ci/issues/585
           - { ROS_DISTRO: foxy, ROS_REPO: ros, BEFORE_RUN_TARGET_TEST_EMBED: "ici_with_unset_variables source /root/target_ws/install/setup.bash" }
           - { ROS_DISTRO: galactic, ROS_REPO: ros, BEFORE_RUN_TARGET_TEST_EMBED: "ici_with_unset_variables source /root/target_ws/install/setup.bash" }
-          - { ROS_DISTRO: humble, ROS_REPO: ros, BEFORE_RUN_TARGET_TEST_EMBED: "ici_with_unset_variables source /root/target_ws/install/setup.bash" }
-          - { ROS_DISTRO: rolling, ROS_REPO: ros, BEFORE_RUN_TARGET_TEST_EMBED: "ici_with_unset_variables source /root/target_ws/install/setup.bash" }
+          # - { ROS_DISTRO: humble, ROS_REPO: ros, BEFORE_RUN_TARGET_TEST_EMBED: "ici_with_unset_variables source /root/target_ws/install/setup.bash" }
+          # - { ROS_DISTRO: rolling, ROS_REPO: ros, BEFORE_RUN_TARGET_TEST_EMBED: "ici_with_unset_variables source /root/target_ws/install/setup.bash" }
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
