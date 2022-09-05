@@ -20,13 +20,13 @@
 
 ```sh
 # 本パッケージをクローンし、依存関係をインストールする
-mkdir -p ~/dev_ws/src
-cd ~/dev_ws/src
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws/src
 git clone -b ros2 https://github.com/rt-net/crane_x7_description
 rosdep install -r -y -i --from-paths .
 
 # パッケージをビルドする
-cd ~/dev_ws
+cd ~/ros2_ws
 colcon build --symlink-install
 source install/setup.bash
 ```
