@@ -15,6 +15,11 @@ See [rt-net/crane_x7_ros#154](https://github.com/rt-net/crane_x7_ros/issues/154)
 - Melodic
 - Noetic
 
+### ROS 2
+
+- [Foxy](https://github.com/rt-net/crane_x7_description/tree/ros2)
+- [Galactic](https://github.com/rt-net/crane_x7_description/tree/ros2)
+
 ## Installation
 
 ```sh

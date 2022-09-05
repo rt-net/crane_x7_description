@@ -16,6 +16,11 @@
 - Melodic
 - Noetic
 
+### ROS 2
+
+- [Foxy](https://github.com/rt-net/crane_x7_description/tree/ros2)
+- [Galactic](https://github.com/rt-net/crane_x7_description/tree/ros2)
+
 ## インストール方法
 
 ```sh
