@@ -2,31 +2,29 @@
 
 # crane_x7_description
 
-[![industrial_ci](https://github.com/rt-net/crane_x7_description/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/crane_x7_description/actions?query=workflow%3Aindustrial_ci+branch%3Amaster)
+<!-- [![industrial_ci](https://github.com/rt-net/crane_x7_description/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/crane_x7_description/actions?query=workflow%3Aindustrial_ci+branch%3Amaster) -->
 
-ROS package with URDF description macro for [CRANE-X7](https://rt-net.jp/products/crane-x7/).
-
-This ROS packages was separated from [rt-net/crane_x7_ros](https://github.com/rt-net/crane_x7_ros).
-
-See [rt-net/crane_x7_ros#154](https://github.com/rt-net/crane_x7_ros/issues/154) for details.
+ROS 2 package with URDF description macro for [CRANE-X7](https://rt-net.jp/products/crane-x7/).
 
 ## Supported ROS distributions
 
-- Melodic
-- Noetic
+- Foxy
+- Galactic
+- Humble
 
 ## Installation
 
 ```sh
 # Clone crane_x7_description and install dependencies
-cd ~/catkin_ws/src
-git clone https://github.com/rt-net/crane_x7_description
+mkdir -p ~/dev_ws/src
+cd ~/dev_ws/src
+git clone -b ros2 https://github.com/rt-net/crane_x7_description
 rosdep install -r -y -i --from-paths .
 
 # Build the package
-cd ~/catkin_ws
-catkin_make
-source devel/setup.bash
+cd ~/dev_ws
+colcon build --symlink-install
+source install/setup.bash
 ```
 
 ## How to Use
@@ -34,7 +32,7 @@ source devel/setup.bash
 Display a CRANE-X7 robot model on RViz with the following command:
 
 ```sh
-roslaunch crane_x7_description display.launch 
+ros2 launch crane_x7_description display.launch.py
 ```
 
 ![display_launch](https://rt-net.github.io/images/crane-x7/display_launch.png)

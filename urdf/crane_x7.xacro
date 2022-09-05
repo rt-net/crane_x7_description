@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7_mounting_plate.xacro"/>
   <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7_arm.xacro"/>
+  <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7_mounting_plate.xacro"/>
   <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7_wide_two_finger_gripper.xacro"/>
+  <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7_rt_logos.xacro"/>
 
   <material name="black">
     <color rgba="0.2 0.2 0.2 1.0"/>
@@ -26,57 +27,156 @@
 
   <xacro:macro name="crane_x7"
       params="parent
-              base_color
-              shoulder_color
-              shoulder_joint_cover_color
-              upper_arm_upper_color
-              upper_arm_lower_color
-              elbow_joint_cover_color
-              lower_arm_upper_color
-              lower_arm_lower_color
-              wrist_color
-              hand_color
-              joints_vlimit
-              shoulder_llimit
-              shoulder_ulimit
-              logos_definition
-              use_effort_gripper
+              name_link_mounting_plate
+              name_link_base
+              name_link_1
+              name_link_2
+              name_link_3
+              name_link_4
+              name_link_5
+              name_link_6
+              name_link_7
+              name_link_cover_2_l
+              name_link_cover_2_r
+              name_link_cover_4_l
+              name_link_cover_4_r
+              name_link_logo_symbol_l
+              name_link_logo_symbol_r
+              name_link_logo_text_l
+              name_link_logo_text_r
+              name_link_gripper_base
+              name_link_gripper_finger_a
+              name_link_gripper_finger_b
+              name_joint_mounting_plate
+              name_joint_base
+              name_joint_1
+              name_joint_2
+              name_joint_3
+              name_joint_4
+              name_joint_5
+              name_joint_6
+              name_joint_7
+              name_joint_cover_2_l
+              name_joint_cover_2_r
+              name_joint_cover_4_l
+              name_joint_cover_4_r
+              name_joint_logo_symbol_l
+              name_joint_logo_symbol_r
+              name_joint_logo_text_l
+              name_joint_logo_text_r
+              name_joint_gripper_finger_a
+              name_joint_gripper_finger_b
+              color_link_base
+              color_link_1
+              color_link_cover_2
+              color_link_2
+              color_link_3
+              color_link_cover_4
+              color_link_4
+              color_link_5
+              color_link_6
+              color_hand
+              joint_velocity_limit
+              joint_1_lower_limit
+              joint_1_upper_limit
+              joint_2_lower_limit
+              joint_2_upper_limit
+              joint_3_lower_limit
+              joint_3_upper_limit
+              joint_4_lower_limit
+              joint_4_upper_limit
+              joint_5_lower_limit
+              joint_5_upper_limit
+              joint_6_lower_limit
+              joint_6_upper_limit
+              joint_7_lower_limit
+              joint_7_upper_limit
+              joint_hand_lower_limit
+              joint_hand_upper_limit
               *origin">
 
     <!-- Mounting plate
          (Root of the manipulator's TF tree) -->
     <xacro:crane_x7_mounting_plate
         parent="${parent}"
-        name="crane_x7_mounting_plate"
-        color="silver">
+        name_link_mounting_plate="${name_link_mounting_plate}"
+        name_joint_mounting_plate="${name_joint_mounting_plate}"
+        color="black">
       <xacro:insert_block name="origin"/>
     </xacro:crane_x7_mounting_plate>
 
     <!-- Arm -->
     <xacro:crane_x7_arm
-        parent="crane_x7_mounting_plate_link"
-        end_effector_base_link="crane_x7_gripper_base_link"
-        base_color="${base_color}"
-        shoulder_color="${shoulder_color}"
-        shoulder_joint_cover_color="${shoulder_joint_cover_color}"
-        upper_arm_upper_color="${upper_arm_lower_color}"
-        upper_arm_lower_color="${upper_arm_lower_color}"
-        elbow_joint_cover_color="${elbow_joint_cover_color}"
-        lower_arm_upper_color="${lower_arm_upper_color}"
-        lower_arm_lower_color="${lower_arm_lower_color}"
-        wrist_color="${wrist_color}"
-        joints_vlimit="${joints_vlimit}"
-        shoulder_llimit="${shoulder_llimit}"
-        shoulder_ulimit="${shoulder_ulimit}"
-        logos_definition="${logos_definition}">
+        parent="${name_link_mounting_plate}"
+        name_link_base="${name_link_base}"
+        name_link_1="${name_link_1}"
+        name_link_2="${name_link_2}"
+        name_link_3="${name_link_3}"
+        name_link_4="${name_link_4}"
+        name_link_5="${name_link_5}"
+        name_link_6="${name_link_6}"
+        name_link_7="${name_link_7}"
+        name_link_cover_2_l="${name_link_cover_2_l}"
+        name_link_cover_2_r="${name_link_cover_2_r}"
+        name_link_cover_4_l="${name_link_cover_4_l}"
+        name_link_cover_4_r="${name_link_cover_4_r}"
+        name_link_logo_symbol_l="${name_link_logo_symbol_l}"
+        name_link_logo_symbol_r="${name_link_logo_symbol_r}"
+        name_link_logo_text_l="${name_link_logo_text_l}"
+        name_link_logo_text_r="${name_link_logo_text_r}"
+        name_joint_base="${name_joint_base}"
+        name_joint_1="${name_joint_1}"
+        name_joint_2="${name_joint_2}"
+        name_joint_3="${name_joint_3}"
+        name_joint_4="${name_joint_4}"
+        name_joint_5="${name_joint_5}"
+        name_joint_6="${name_joint_6}"
+        name_joint_7="${name_joint_7}"
+        name_joint_cover_2_l="${name_joint_cover_2_l}"
+        name_joint_cover_2_r="${name_joint_cover_2_r}"
+        name_joint_cover_4_l="${name_joint_cover_4_l}"
+        name_joint_cover_4_r="${name_joint_cover_4_r}"
+        name_joint_logo_symbol_l="${name_joint_logo_symbol_l}"
+        name_joint_logo_symbol_r="${name_joint_logo_symbol_r}"
+        name_joint_logo_text_l="${name_joint_logo_text_l}"
+        name_joint_logo_text_r="${name_joint_logo_text_r}"
+        color_link_base="${color_link_base}"
+        color_link_1="${color_link_1}"
+        color_link_cover_2="${color_link_cover_2}"
+        color_link_2="${color_link_2}"
+        color_link_3="${color_link_3}"
+        color_link_cover_4="${color_link_cover_4}"
+        color_link_4="${color_link_4}"
+        color_link_5="${color_link_5}"
+        color_link_6="${color_link_6}"
+        joint_velocity_limit="${joint_velocity_limit}"
+        joint_1_lower_limit="${joint_1_lower_limit}"
+        joint_1_upper_limit="${joint_1_upper_limit}"
+        joint_2_lower_limit="${joint_2_lower_limit}"
+        joint_2_upper_limit="${joint_2_upper_limit}"
+        joint_3_lower_limit="${joint_3_lower_limit}"
+        joint_3_upper_limit="${joint_3_upper_limit}"
+        joint_4_lower_limit="${joint_4_lower_limit}"
+        joint_4_upper_limit="${joint_4_upper_limit}"
+        joint_5_lower_limit="${joint_5_lower_limit}"
+        joint_5_upper_limit="${joint_5_upper_limit}"
+        joint_6_lower_limit="${joint_6_lower_limit}"
+        joint_6_upper_limit="${joint_6_upper_limit}"
+        joint_7_lower_limit="${joint_7_lower_limit}"
+        joint_7_upper_limit="${joint_7_upper_limit}">
       <origin xyz="0 0 ${MOUNTING_PLATE_THICKNESS}" rpy="0 0 0"/>
     </xacro:crane_x7_arm>
 
     <!-- End effector -->
     <xacro:crane_x7_wide_two_finger_gripper
-        name="crane_x7_gripper"
-        color="${hand_color}"
-        vlimit="${joints_vlimit}"
-        use_effort_gripper="${use_effort_gripper}"/>
+        name_link_gripper_base="${name_link_gripper_base}"
+        name_link_gripper_finger_a="${name_link_gripper_finger_a}"
+        name_link_gripper_finger_b="${name_link_gripper_finger_b}"
+        name_joint_gripper_finger_a="${name_joint_gripper_finger_a}"
+        name_joint_gripper_finger_b="${name_joint_gripper_finger_b}"
+        color="${color_hand}"
+        joint_velocity_limit="${joint_velocity_limit}"
+        joint_hand_lower_limit="${joint_hand_lower_limit}"
+        joint_hand_upper_limit="${joint_hand_upper_limit}"/>
   </xacro:macro>
 </robot>

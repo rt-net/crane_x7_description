@@ -2,32 +2,29 @@
 
 # crane_x7_description
 
-[![industrial_ci](https://github.com/rt-net/crane_x7_description/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/crane_x7_description/actions?query=workflow%3Aindustrial_ci+branch%3Amaster)
+<!-- [![industrial_ci](https://github.com/rt-net/crane_x7_description/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/crane_x7_description/actions?query=workflow%3Aindustrial_ci+branch%3Amaster) -->
 
-
-[CRANE-X7](https://rt-net.jp/products/crane-x7/)のURDFファイルを含むROSパッケージです。
-
-このROSパッケージは[rt-net/crane_x7_ros](https://github.com/rt-net/crane_x7_ros)から分離しました。
-
-詳細は[rt-net/crane_x7_ros#154](https://github.com/rt-net/crane_x7_ros/issues/154)を見てください。
+[CRANE-X7](https://rt-net.jp/products/crane-x7/)のURDFファイルを含むROS 2パッケージです。
 
 ## サポートするROSディストリビューション
 
-- Melodic
-- Noetic
+- Foxy
+- Galactic
+- Humble
 
 ## インストール方法
 
 ```sh
 # 本パッケージをクローンし、依存関係をインストールする
-cd ~/catkin_ws/src
-git clone https://github.com/rt-net/crane_x7_description
+mkdir -p ~/dev_ws/src
+cd ~/dev_ws/src
+git clone -b ros2 https://github.com/rt-net/crane_x7_description
 rosdep install -r -y -i --from-paths .
 
 # パッケージをビルドする
-cd ~/catkin_ws
-catkin_make
-source devel/setup.bash
+cd ~/dev_ws
+colcon build --symlink-install
+source install/setup.bash
 ```
 
 ## 使用方法
@@ -35,7 +32,7 @@ source devel/setup.bash
 次のコマンドを実行するとRViz上にCRANE-X7のモデルが表示されます
 
 ```sh
-roslaunch crane_x7_description display.launch 
+ros2 launch crane_x7_description display.launch.py
 ```
 
 ![display_launch](https://rt-net.github.io/images/crane-x7/display_launch.png)

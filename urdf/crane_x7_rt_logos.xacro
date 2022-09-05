@@ -1,18 +1,26 @@
 <?xml version="1.0"?>
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:macro name="crane_x7_logos" params="parent name">
+  <xacro:macro name="crane_x7_logos"
+      params="parent
+              name_link_logo_symbol_l
+              name_link_logo_symbol_r
+              name_link_logo_text_l
+              name_link_logo_text_r
+              name_joint_logo_symbol_l
+              name_joint_logo_symbol_r
+              name_joint_logo_text_l
+              name_joint_logo_text_r">
+
     <!-- Left side logo text -->
-    <link name="${name}_logo_text_l_link">
+    <link name="${name_link_logo_text_l}">
       <visual>
         <origin xyz="0 0 0" rpy="-${M_PI/2} ${M_PI/2} 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/rtcorp_logo_name.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="logo_red">
-          <color rgba="1.0 0.3 0.3 1.0"/>
-        </material>
+        <material name="black"/>
       </visual>
 
       <collision>
@@ -23,21 +31,21 @@
         </geometry>
       </collision>
     </link>
-    <joint name="${name}_logo_text_l_joint" type="fixed">
+    <joint name="${name_joint_logo_text_l}" type="fixed">
       <parent link="${parent}"/>
-      <child link="${name}_logo_text_l_link"/>
+      <child link="${name_link_logo_text_l}"/>
       <origin xyz="0 0.0345 0.095" rpy="0 0 0"/>
     </joint>
 
     <!-- Left side logo symbol -->
-    <link name="${name}_logo_symbol_l_link">
+    <link name="${name_link_logo_symbol_l}">
       <visual>
         <origin xyz="0 0 0" rpy="-${M_PI/2} ${M_PI/2} 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/rtcorp_logo_rabbit.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="logo_red"/>
+        <material name="red"/>
       </visual>
 
       <collision>
@@ -48,21 +56,21 @@
         </geometry>
       </collision>
     </link>
-    <joint name="${name}_logo_symbol_l_joint" type="fixed">
+    <joint name="${name_joint_logo_symbol_l}" type="fixed">
       <parent link="${parent}"/>
-      <child link="${name}_logo_symbol_l_link"/>
+      <child link="${name_link_logo_symbol_l}"/>
       <origin xyz="0 0.0345 0.132" rpy="0 0 0"/>
     </joint>
 
     <!-- Right side logo text -->
-    <link name="${name}_logo_text_r_link">
+    <link name="${name_link_logo_text_r}">
       <visual>
         <origin xyz="0 0 0" rpy="${M_PI/2} -${M_PI/2} 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/rtcorp_logo_name.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="logo_red"/>
+        <material name="black"/>
       </visual>
 
       <collision>
@@ -73,22 +81,23 @@
         </geometry>
       </collision>
     </link>
-    <joint name="${name}_logo_text_r_joint" type="fixed">
+    <joint name="${name_joint_logo_text_r}" type="fixed">
       <parent link="${parent}"/>
-      <child link="${name}_logo_text_r_link"/>
+      <child link="${name_link_logo_text_r}"/>
       <origin xyz="0 -0.0345 0.104" rpy="0 0 0"/>
     </joint>
 
     <!-- Right side logo symbol -->
-    <link name="${name}_logo_symbol_r_link">
+    <link name="${name_link_logo_symbol_r}">
       <visual>
         <origin xyz="0 0 0" rpy="${M_PI/2} -${M_PI/2} 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/rtcorp_logo_rabbit.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="logo_red"/>
+        <material name="red"/>
       </visual>
+
       <collision>
         <origin xyz="0 0 0" rpy="${M_PI/2} -${M_PI/2} 0"/>
         <geometry>
@@ -97,25 +106,10 @@
         </geometry>
       </collision>
     </link>
-    <joint name="${name}_logo_symbol_r_joint" type="fixed">
+    <joint name="${name_joint_logo_symbol_r}" type="fixed">
       <parent link="${parent}"/>
-      <child link="${name}_logo_symbol_r_link"/>
+      <child link="${name_link_logo_symbol_r}"/>
       <origin xyz="0 -0.0345 0.065" rpy="0 0 0"/>
     </joint>
-
-    <!-- For gazebo simulation -->
-    <gazebo reference="${name}_logo_symbol_r_link">
-      <material>Gazebo/Red</material>
-    </gazebo>
-    <gazebo reference="${name}_logo_symbol_l_link">
-      <material>Gazebo/Red</material>
-    </gazebo>
-    <gazebo reference="${name}_logo_text_r_link">
-      <material>Gazebo/Black</material>
-    </gazebo>
-    <gazebo reference="${name}_logo_text_l_link">
-      <material>Gazebo/Black</material>
-    </gazebo>
-
   </xacro:macro>
 </robot>

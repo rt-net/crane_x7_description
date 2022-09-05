@@ -6,14 +6,20 @@
 
   <xacro:property name="MOUNTING_PLATE_THICKNESS" value="0.005"/>
 
-  <xacro:macro name="crane_x7_mounting_plate" params="parent name color *origin">
-    <joint name="${name}_joint" type="fixed">
+  <xacro:macro name="crane_x7_mounting_plate"
+      params="parent
+              name_link_mounting_plate
+              name_joint_mounting_plate
+              color
+              *origin">
+
+    <joint name="${name_joint_mounting_plate}" type="fixed">
       <xacro:insert_block name="origin"/>
       <parent link="${parent}"/>
-      <child link="${name}_link"/>
+      <child link="${name_link_mounting_plate}"/>
     </joint>
 
-    <link name="${name}_link">
+    <link name="${name_link_mounting_plate}">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
@@ -31,10 +37,5 @@
         </geometry>
       </collision>
     </link>
-
-    <!-- For gazebo simulation -->
-    <gazebo reference="${name}_link">
-      <material>Gazebo/Black</material>
-    </gazebo>
   </xacro:macro>
 </robot>
