@@ -52,11 +52,13 @@
             name_link_gripper_base
             name_link_gripper_finger_a
             name_link_gripper_finger_b
+            config_package
+            config_file_path
             ">
 
     <gazebo>
       <plugin filename="libign_ros2_control-system.so" name="ign_ros2_control::IgnitionROS2ControlPlugin">
-        <parameters>$(find crane_x7_gazebo)/config/controllers.yaml</parameters>
+        <parameters>$(find ${config_package})/${config_file_path}</parameters>
       </plugin>
     </gazebo>
 

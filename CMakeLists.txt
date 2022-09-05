@@ -4,6 +4,7 @@ project(crane_x7_description)
 find_package(ament_cmake REQUIRED)
 
 install(DIRECTORY
+  config
   launch
   meshes
   urdf
