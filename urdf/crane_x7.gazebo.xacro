@@ -7,7 +7,7 @@
       <material>
         <ambient>0.2 0.2 0.2 1</ambient>
         <diffuse>0.0 0.0 0.0 1</diffuse>
-        <specular>0.1 0.1 0.1 128.0</specular>
+        <!-- <specular>0.1 0.1 0.1 128.0</specular> -->
       </material>
     </visual>
   </xacro:macro>
@@ -17,7 +17,7 @@
       <material>
         <ambient>0.95 0.95 0.95 1</ambient>
         <diffuse>0.95 0.95 0.95 1</diffuse>
-        <specular>0.1 0.1 0.1 128.0</specular>
+        <!-- <specular>0.1 0.1 0.1 128.0</specular> -->
       </material>
     </visual>
   </xacro:macro>
@@ -27,7 +27,7 @@
       <material>
         <ambient>1.0 0.3 0.3 1</ambient>
         <diffuse>1.0 0.0 0.0 1</diffuse>
-        <specular>0.1 0.1 0.1 128.0</specular>
+        <!-- <specular>0.1 0.1 0.1 128.0</specular> -->
       </material>
     </visual>
   </xacro:macro>
