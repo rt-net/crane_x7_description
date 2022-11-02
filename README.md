@@ -10,6 +10,7 @@
 
 - Foxy
 - Galactic
+- Humble
 
 ### ROS 1
 
