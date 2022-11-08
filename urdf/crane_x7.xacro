@@ -93,6 +93,8 @@
               joint_7_upper_limit
               joint_hand_lower_limit
               joint_hand_upper_limit
+              use_d435
+              use_gazebo
               *origin">
 
     <!-- Mounting plate
@@ -166,6 +168,15 @@
         joint_7_upper_limit="${joint_7_upper_limit}">
       <origin xyz="0 0 ${MOUNTING_PLATE_THICKNESS}" rpy="0 0 0"/>
     </xacro:crane_x7_arm>
+
+    <!-- RealSense D435 -->
+    <xacro:if value="$(arg use_d435)">
+      <xacro:d435
+          parent="${name_link_7}"
+          use_gazebo="$(arg use_gazebo)">
+        <origin xyz="0.0 0.0445 0.009" rpy="${radians(-90)} ${radians(-90)} 0"/>
+      </xacro:d435>
+    </xacro:if>
 
     <!-- End effector -->
     <xacro:crane_x7_wide_two_finger_gripper

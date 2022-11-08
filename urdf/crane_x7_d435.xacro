@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="d435"
+      params="parent
+              use_gazebo
+              *origin">
+    <joint name="camera_joint" type="fixed">
+      <xacro:insert_block name="origin"/>
+      <parent link="${parent}"/>
+      <child  link="camera_base"/>
+    </joint>
+
+    <link name="camera_base">
+      <inertial>
+        <mass value="0.6"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+      </inertial>
+      <visual>
+        <origin xyz="${0.025/2} 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.025 0.09 0.025"/>
+        </geometry>
+        <material name="yellow">
+          <color rgba="1 1 0 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="${0.025/2} 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.025 0.09 0.025"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="camera_link_joint" type="fixed">
+      <origin xyz="0.0208 0.0175 0" rpy="0 0 0"/>
+      <parent link="camera_base"/>
+      <child  link="camera_link"/>
+    </joint>
+
+    <link name="camera_link"/>
+
+    <xacro:if value="$(arg use_gazebo)">
+      <joint name="camera_depth_frame_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="camera_link"/>
+        <child  link="camera_depth_frame"/>
+      </joint>
+
+      <link name="camera_depth_frame"/>
+
+      <joint name="camera_depth_optical_frame_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="${radians(-90)} 0 ${radians(-90)}"/>
+        <parent link="camera_depth_frame"/>
+        <child  link="camera_depth_optical_frame"/>
+      </joint>
+
+      <link name="camera_depth_optical_frame"/>
+
+      <joint name="camera_color_frame_joint" type="fixed">
+        <origin xyz="0 0.015 0" rpy="0 0 0"/>
+        <parent link="camera_link"/>
+        <child  link="camera_color_frame"/>
+      </joint>
+
+      <link name="camera_color_frame"/>
+
+      <joint name="camera_color_optical_frame_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="${radians(-90)} 0 ${radians(-90)}"/>
+        <parent link="camera_color_frame"/>
+        <child  link="camera_color_optical_frame"/>
+      </joint>
+
+      <link name="camera_color_optical_frame"/>
+
+      <joint name="camera_aligned_depth_to_color_frame_joint" type="fixed">
+        <origin xyz="0 0.015 0" rpy="0 0 0"/>
+        <parent link="camera_link"/>
+        <child  link="camera_aligned_depth_to_color_frame"/>
+      </joint>
+
+      <link name="camera_aligned_depth_to_color_frame"/>
+    </xacro:if>
+  </xacro:macro>
+</robot>

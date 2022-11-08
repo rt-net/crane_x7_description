@@ -9,11 +9,13 @@
 
   <!-- Include the Crane X7 generator macro -->
   <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7.xacro"/>
+  <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7_d435.xacro"/>
   <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7.ros2_control.xacro"/>
   <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7.gazebo.xacro"/>
   <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7.gazebo_ros2_control.xacro"/>
 
   <xacro:arg name="use_gazebo" default="false" />
+  <xacro:arg name="use_d435" default="false" />
   <xacro:arg name="port_name" default="/dev/ttyUSB0" />
   <xacro:arg name="baudrate" default="3000000" />
   <xacro:arg name="timeout_seconds" default="1.0" />
@@ -177,7 +179,9 @@
     joint_7_lower_limit="${JOINT_7_LOWER_LIMIT}"
     joint_7_upper_limit="${JOINT_7_UPPER_LIMIT}"
     joint_hand_lower_limit="${JOINT_HAND_LOWER_LIMIT}"
-    joint_hand_upper_limit="${JOINT_HAND_UPPER_LIMIT}">
+    joint_hand_upper_limit="${JOINT_HAND_UPPER_LIMIT}"
+    use_d435="$(arg use_d435)"
+    use_gazebo="$(arg use_gazebo)">
     <origin xyz="0 0 0"/>
   </xacro:crane_x7>
 
@@ -240,6 +244,7 @@
       name_link_gripper_finger_b="${NAME_LINK_GRIPPER_FINGER_B}" 
       config_package="$(arg gz_control_config_package)" 
       config_file_path="$(arg gz_control_config_file_path)" 
+      use_d435="$(arg use_d435)"
       />
 
     <xacro:crane_x7_gazebo_ros2_control_settings

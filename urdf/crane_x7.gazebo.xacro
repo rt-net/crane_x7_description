@@ -54,6 +54,7 @@
             name_link_gripper_finger_b
             config_package
             config_file_path
+            use_d435
             ">
 
     <gazebo>
@@ -141,6 +142,75 @@
       <mu2>0.8</mu2>
       <xacro:material_gazebo_red/>
     </gazebo>
+
+    <xacro:if value="$(arg use_d435)">
+      <gazebo reference="camera_link">
+        <sensor type="depth" name="camera1">
+          <update_rate>30.0</update_rate>
+          <visualize>false</visualize>
+          <camera>
+            <horizontal_fov>${radians(69.4)}</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>B8G8R8</format>
+            </image>
+            <depth_camera>
+            </depth_camera>
+            <clip>
+              <near>0.02</near>
+              <far>300</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0.0</mean>
+              <stddev>0.007</stddev>
+            </noise>
+          </camera>
+          <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <ros>
+              <namespace>demo_cam</namespace>
+              <remapping>depth_camera/image_raw:=fake_cam_color/image_raw</remapping>
+              <remapping>depth_camera/camera_info:=fake_cam_color/camera_info</remapping>
+              <remapping>depth_camera/points:=depth_camera/depth/color/points</remapping>
+            </ros>
+            <camera_name>depth_camera</camera_name>
+            <min_depth>0.105</min_depth>
+            <max_depth>10.0</max_depth>
+          </plugin>
+        </sensor>
+      </gazebo>
+
+      <!--
+      <gazebo reference="camera_aligned_depth_to_color_frame">
+        <sensor type="depth" name="camera2">
+          <update_rate>30.0</update_rate>
+          <camera name="color_camera">
+            <horizontal_fov>${radians(69.4)}</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>B8G8R8</format>
+            </image>
+            <clip>
+              <near>0.02</near>
+              <far>300</far>
+            </clip>
+          </camera>
+          <plugin name="camera_plugin" filename="libgazebo_ros_openni_kinect.so">
+            <baseline>0.2</baseline>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>0.0</updateRate>
+            <cameraName>camera</cameraName>
+            <imageTopicName>color/image_raw</imageTopicName>
+            <depthImageTopicName>aligned_depth_to_color/image_raw</depthImageTopicName>
+            <cameraInfoTopicName>color/camera_info</cameraInfoTopicName>
+            <depthImageCameraInfoTopicName>aligned_depth_to_color/camera_info</depthImageCameraInfoTopicName>
+          </plugin>
+        </sensor>
+      </gazebo>
+      -->
+    </xacro:if>
 
   </xacro:macro>
 </robot>
