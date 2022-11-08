@@ -211,6 +211,5 @@
       </gazebo>
       -->
     </xacro:if>
-
   </xacro:macro>
 </robot>
