@@ -18,8 +18,7 @@
 
 ### ROS 2
 
-- [Foxy](https://github.com/rt-net/crane_x7_description/tree/ros2)
-- [Galactic](https://github.com/rt-net/crane_x7_description/tree/ros2)
+- [Foxy](https://github.com/rt-net/crane_x7_description/tree/foxy-devel)
 
 ## インストール方法
 
