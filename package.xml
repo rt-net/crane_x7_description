@@ -15,6 +15,7 @@
   <depend>joint_state_publisher_gui</depend>
   <depend>launch</depend>
   <depend>robot_state_publisher</depend>
+  <depend>realsense2_description</depend>
   <depend>rviz2</depend>
   <depend>xacro</depend>
 
