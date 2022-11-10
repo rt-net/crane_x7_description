@@ -39,6 +39,12 @@ Display a CRANE-X7 robot model on RViz with the following command:
 ros2 launch crane_x7_description display.launch.py
 ```
 
+If you use a [RealSense D435 mounter](https://github.com/rt-net/crane_x7_Hardware/blob/master/3d_print_parts/v1.0/CRANE-X7_HandA_RealSenseD435%E3%83%9E%E3%82%A6%E3%83%B3%E3%82%BF.stl), execute the following command.
+
+```sh
+ros2 launch crane_x7_description display.launch.py use_d435:=true
+```
+
 ![display_launch](https://rt-net.github.io/images/crane-x7/display_launch.png)
 
 ## Proprietary Rights
