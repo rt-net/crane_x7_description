@@ -11,18 +11,15 @@
 
     <link name="camera_base">
       <inertial>
-        <mass value="0.6"/>
+        <mass value="0.072"/>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
       </inertial>
       <visual>
-        <origin xyz="${0.025/2} 0 0" rpy="0 0 0"/>
+        <origin xyz="0.025 0 0" rpy="${radians(90)} 0 ${radians(90)}"/>
         <geometry>
-          <box size="0.025 0.09 0.025"/>
+          <mesh filename="package://realsense2_description/meshes/d435.dae" />
         </geometry>
-        <material name="yellow">
-          <color rgba="1 1 0 1" />
-        </material>
       </visual>
       <collision>
         <origin xyz="${0.025/2} 0 0" rpy="0 0 0"/>
