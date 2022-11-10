@@ -180,7 +180,7 @@
     joint_7_upper_limit="${JOINT_7_UPPER_LIMIT}"
     joint_hand_lower_limit="${JOINT_HAND_LOWER_LIMIT}"
     joint_hand_upper_limit="${JOINT_HAND_UPPER_LIMIT}"
-    use_d435="$(arg use_d435)"
+    use_d435="$(arg use_d435)">
     <origin xyz="0 0 0"/>
   </xacro:crane_x7>
 
