@@ -181,7 +181,6 @@
     joint_hand_lower_limit="${JOINT_HAND_LOWER_LIMIT}"
     joint_hand_upper_limit="${JOINT_HAND_UPPER_LIMIT}"
     use_d435="$(arg use_d435)"
-    use_gazebo="$(arg use_gazebo)">
     <origin xyz="0 0 0"/>
   </xacro:crane_x7>
 
@@ -244,7 +243,6 @@
       name_link_gripper_finger_b="${NAME_LINK_GRIPPER_FINGER_B}" 
       config_package="$(arg gz_control_config_package)" 
       config_file_path="$(arg gz_control_config_file_path)" 
-      use_d435="$(arg use_d435)"
       />
 
     <xacro:crane_x7_gazebo_ros2_control_settings
