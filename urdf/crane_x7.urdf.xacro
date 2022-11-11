@@ -9,7 +9,6 @@
 
   <!-- Include the Crane X7 generator macro -->
   <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7.xacro"/>
-  <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7_d435.xacro"/>
   <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7.ros2_control.xacro"/>
   <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7.gazebo.xacro"/>
   <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7.gazebo_ros2_control.xacro"/>
