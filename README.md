@@ -39,7 +39,7 @@ source install/setup.bash
 ros2 launch crane_x7_description display.launch.py
 ```
 
-[RealSense D435マウンタ](https://github.com/rt-net/crane_x7_Hardware/blob/master/3d_print_parts/v1.0/CRANE-X7_HandA_RealSenseD435%E3%83%9E%E3%82%A6%E3%83%B3%E3%82%BF.stl)を使用している場合は次のコマンドを実行してください。
+[RealSense D435マウンタ](https://github.com/rt-net/crane_x7_Hardware/blob/master/3d_print_parts/v1.0/CRANE-X7_HandA_RealSenseD435マウンタ.stl)を使用している場合は次のコマンドを実行してください。
 
 ```sh
 ros2 launch crane_x7_description display.launch.py use_d435:=true
