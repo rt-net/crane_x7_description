@@ -65,3 +65,11 @@ def test_use_gazebo():
     rdl.gz_control_config_package = 'crane_x7_description'
     rdl.gz_control_config_file_path = 'config/dummy_controllers.yaml'
     assert 'ign_ros2_control/IgnitionSystem' in exec_load(rdl)
+
+def test_use_d435():
+    # use_d435が変更され、xacroにd435がセットされることを期待
+    rdl = RobotDescriptionLoader()
+    rdl.use_d435 = 'true'
+    rdl.gz_control_config_package = 'crane_x7_description'
+    rdl.gz_control_config_file_path = 'config/dummy_controllers.yaml'
+    assert 'realsense2_description/meshes/d435.dae' in exec_load(rdl)
