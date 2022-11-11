@@ -12,7 +12,7 @@ def generate_launch_description():
     declare_use_d435 = DeclareLaunchArgument(
         'use_d435',
         default_value='false',
-        description='Use d435.'
+        description='Set true to attach the RealSense D435 model.'
     )
 
     description_loader = RobotDescriptionLoader()
