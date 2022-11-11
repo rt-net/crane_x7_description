@@ -141,5 +141,6 @@
       <mu2>0.8</mu2>
       <xacro:material_gazebo_red/>
     </gazebo>
+
   </xacro:macro>
 </robot>
