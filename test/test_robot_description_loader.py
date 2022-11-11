@@ -66,6 +66,7 @@ def test_use_gazebo():
     rdl.gz_control_config_file_path = 'config/dummy_controllers.yaml'
     assert 'ign_ros2_control/IgnitionSystem' in exec_load(rdl)
 
+
 def test_use_d435():
     # use_d435が変更され、xacroにd435がセットされることを期待
     rdl = RobotDescriptionLoader()
