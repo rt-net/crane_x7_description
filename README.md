@@ -42,6 +42,15 @@ ros2 launch crane_x7_description display.launch.py
 
 ![display_launch](https://rt-net.github.io/images/crane-x7/display_launch.png)
 
+[RealSense D435マウンタ](https://github.com/rt-net/crane_x7_Hardware/blob/master/3d_print_parts/v1.0/CRANE-X7_HandA_RealSenseD435マウンタ.stl)を使用している場合は次のコマンドを実行してください。
+
+```sh
+ros2 launch crane_x7_description display.launch.py use_d435:=true
+```
+
+![display_launch_use_d435](https://rt-net.github.io/images/crane-x7/display_launch_use_d435.png)
+
+
 ## 知的財産権について
 
 CRANE-X7は、アールティが開発した研究用アームロボットです。
