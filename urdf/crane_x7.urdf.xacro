@@ -97,7 +97,9 @@
   <xacro:property name="JOINT_3_UPPER_LIMIT" value="${radians(157)}"/>
   <!-- JOINT_4はサーボ可動範囲を超えやすいため、LOWER_LIMITをサーボのリミット値より小さくする -->
   <xacro:property name="JOINT_4_LOWER_LIMIT" value="${radians(-159)}"/>
-  <xacro:property name="JOINT_4_UPPER_LIMIT" value="${radians(0)}"/>
+  <!-- Gazeboの挙動がlimit付近で不安定なためUPPER_LIMITをサーボのリミット値より大きくする -->
+  <!-- 参照: https://github.com/rt-net/crane_x7_ros/pull/162 -->
+  <xacro:property name="JOINT_4_UPPER_LIMIT" value="${radians(0.001)}"/>
   <xacro:property name="JOINT_5_LOWER_LIMIT" value="${radians(-157)}"/>
   <xacro:property name="JOINT_5_UPPER_LIMIT" value="${radians(157)}"/>
   <xacro:property name="JOINT_6_LOWER_LIMIT" value="${radians(-90)}"/>

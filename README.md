@@ -8,8 +8,8 @@
 
 ## サポートするROSディストリビューション
 
-- Foxy
-- Galactic
+- [Foxy](https://github.com/rt-net/crane_x7_description/tree/foxy-devel)
+- Humble
 
 ### ROS 1
 

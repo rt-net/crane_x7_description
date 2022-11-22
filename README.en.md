@@ -8,8 +8,8 @@ ROS 2 package with URDF description macro for [CRANE-X7](https://rt-net.jp/produ
 
 ## Supported ROS distributions
 
-- Foxy
-- Galactic
+- [Foxy](https://github.com/rt-net/crane_x7_description/tree/foxy-devel)
+- Humble
 
 ### ROS 1
 
