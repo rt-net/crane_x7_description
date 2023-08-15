@@ -256,6 +256,7 @@
       name_joint_6="${NAME_JOINT_6}"
       name_joint_7="${NAME_JOINT_7}"
       name_joint_gripper_finger_a="${NAME_JOINT_GRIPPER_FINGER_A}"
+      name_joint_gripper_finger_b="${NAME_JOINT_GRIPPER_FINGER_B}"
       joint_1_lower_limit="${JOINT_1_LOWER_LIMIT}"
       joint_1_upper_limit="${JOINT_1_UPPER_LIMIT}"
       joint_2_lower_limit="${JOINT_2_LOWER_LIMIT}"
