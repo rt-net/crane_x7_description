@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="material_gazebo_black">
+    <visual>
+      <material>
+        <ambient>0.2 0.2 0.2 1</ambient>
+        <diffuse>0.0 0.0 0.0 1</diffuse>
+      </material>
+    </visual>
+  </xacro:macro>
+
+  <xacro:macro name="material_gazebo_white">
+    <visual>
+      <material>
+        <ambient>0.95 0.95 0.95 1</ambient>
+        <diffuse>0.95 0.95 0.95 1</diffuse>
+      </material>
+    </visual>
+  </xacro:macro>
+
+  <xacro:macro name="material_gazebo_red">
+    <visual>
+      <material>
+        <ambient>1.0 0.3 0.3 1</ambient>
+        <diffuse>1.0 0.0 0.0 1</diffuse>
+      </material>
+    </visual>
+  </xacro:macro>
+
+  <xacro:macro name="gazebo_robot_settings"
+    params="name_link_mounting_plate
+            name_link_base
+            name_link_1
+            name_link_2
+            name_link_3
+            name_link_4
+            name_link_5
+            name_link_6
+            name_link_cover_2_l
+            name_link_cover_2_r
+            name_link_cover_4_l
+            name_link_cover_4_r
+            name_link_logo_symbol_l
+            name_link_logo_symbol_r
+            name_link_logo_text_l
+            name_link_logo_text_r
+            name_link_gripper_base
+            name_link_gripper_finger_a
+            name_link_gripper_finger_b
+            config_package
+            config_file_path
+            ">
+
+    <gazebo>
+      <plugin filename="libign_ros2_control-system.so" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+        <parameters>$(find ${config_package})/${config_file_path}</parameters>
+      </plugin>
+    </gazebo>
+
+    <gazebo reference="${name_link_mounting_plate}">
+      <xacro:material_gazebo_black/>
+    </gazebo>
+
+    <gazebo reference="${name_link_base}">
+      <xacro:material_gazebo_red/>
+    </gazebo>
+
+    <gazebo reference="${name_link_1}">
+      <xacro:material_gazebo_white/>
+    </gazebo>
+
+    <gazebo reference="${name_link_2}">
+      <xacro:material_gazebo_white/>
+    </gazebo>
+
+    <gazebo reference="${name_link_3}">
+      <xacro:material_gazebo_white/>
+    </gazebo>
+
+    <gazebo reference="${name_link_4}">
+      <xacro:material_gazebo_white/>
+    </gazebo>
+
+    <gazebo reference="${name_link_5}">
+      <xacro:material_gazebo_white/>
+    </gazebo>
+
+    <gazebo reference="${name_link_6}">
+      <xacro:material_gazebo_white/>
+    </gazebo>
+
+    <gazebo reference="${name_link_cover_2_l}">
+      <xacro:material_gazebo_red/>
+    </gazebo>
+
+    <gazebo reference="${name_link_cover_2_r}">
+      <xacro:material_gazebo_red/>
+    </gazebo>
+
+    <gazebo reference="${name_link_cover_4_l}">
+      <xacro:material_gazebo_red/>
+    </gazebo>
+
+    <gazebo reference="${name_link_cover_4_r}">
+      <xacro:material_gazebo_red/>
+    </gazebo>
+
+    <gazebo reference="${name_link_logo_symbol_l}">
+      <xacro:material_gazebo_red/>
+    </gazebo>
+
+    <gazebo reference="${name_link_logo_symbol_r}">
+      <xacro:material_gazebo_red/>
+    </gazebo>
+
+    <gazebo reference="${name_link_logo_text_l}">
+      <xacro:material_gazebo_black/>
+    </gazebo>
+
+    <gazebo reference="${name_link_logo_text_r}">
+      <xacro:material_gazebo_black/>
+    </gazebo>
+
+    <gazebo reference="${name_link_gripper_base}">
+      <xacro:material_gazebo_red/>
+    </gazebo>
+
+    <gazebo reference="${name_link_gripper_finger_a}">
+      <mu1>0.8</mu1>
+      <mu2>0.8</mu2>
+      <xacro:material_gazebo_red/>
+    </gazebo>
+
+    <gazebo reference="${name_link_gripper_finger_b}">
+      <mu1>0.8</mu1>
+      <mu2>0.8</mu2>
+      <xacro:material_gazebo_red/>
+    </gazebo>
+
+  </xacro:macro>
+</robot>

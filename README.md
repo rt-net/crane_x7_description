@@ -2,19 +2,19 @@
 
 # crane_x7_description
 
-[![industrial_ci](https://github.com/rt-net/crane_x7_description/workflows/industrial_ci/badge.svg?branch=master)](https://github.com/rt-net/crane_x7_description/actions?query=workflow%3Aindustrial_ci+branch%3Amaster)
+[![industrial_ci](https://github.com/rt-net/crane_x7_description/actions/workflows/industrial_ci.yml/badge.svg?branch=ros2)](https://github.com/rt-net/crane_x7_description/actions/workflows/industrial_ci.yml)
 
-
-[CRANE-X7](https://rt-net.jp/products/crane-x7/)のURDFファイルを含むROSパッケージです。
-
-このROSパッケージは[rt-net/crane_x7_ros](https://github.com/rt-net/crane_x7_ros)から分離しました。
-
-詳細は[rt-net/crane_x7_ros#154](https://github.com/rt-net/crane_x7_ros/issues/154)を見てください。
+[CRANE-X7](https://rt-net.jp/products/crane-x7/)のURDFファイルを含むROS 2パッケージです。
 
 ## サポートするROSディストリビューション
 
-- Melodic
-- Noetic
+- [Foxy](https://github.com/rt-net/crane_x7_description/tree/foxy-devel)
+- Humble
+
+### ROS 1
+
+- [Melodic](https://github.com/rt-net/crane_x7_description/tree/master)
+- [Noetic](https://github.com/rt-net/crane_x7_description/tree/master)
 
 ### ROS 2
 
@@ -24,14 +24,15 @@
 
 ```sh
 # 本パッケージをクローンし、依存関係をインストールする
-cd ~/catkin_ws/src
-git clone https://github.com/rt-net/crane_x7_description
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws/src
+git clone -b ros2 https://github.com/rt-net/crane_x7_description
 rosdep install -r -y -i --from-paths .
 
 # パッケージをビルドする
-cd ~/catkin_ws
-catkin_make
-source devel/setup.bash
+cd ~/ros2_ws
+colcon build --symlink-install
+source install/setup.bash
 ```
 
 ## 使用方法
@@ -39,10 +40,19 @@ source devel/setup.bash
 次のコマンドを実行するとRViz上にCRANE-X7のモデルが表示されます
 
 ```sh
-roslaunch crane_x7_description display.launch 
+ros2 launch crane_x7_description display.launch.py
 ```
 
 ![display_launch](https://rt-net.github.io/images/crane-x7/display_launch.png)
+
+[RealSense D435マウンタ](https://github.com/rt-net/crane_x7_Hardware/blob/master/3d_print_parts/v1.0/CRANE-X7_HandA_RealSenseD435マウンタ.stl)を使用している場合は次のコマンドを実行してください。
+
+```sh
+ros2 launch crane_x7_description display.launch.py use_d435:=true
+```
+
+![display_launch_use_d435](https://rt-net.github.io/images/crane-x7/display_launch_use_d435.png)
+
 
 ## 知的財産権について
 
