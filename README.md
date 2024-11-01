@@ -9,7 +9,8 @@
 ## サポートするROSディストリビューション
 
 - [Foxy](https://github.com/rt-net/crane_x7_description/tree/foxy-devel)
-- Humble
+- [Humble](https://github.com/rt-net/crane_x7_description/tree/ros2)
+- Jazzy
 
 ### ROS 1
 
@@ -17,6 +18,8 @@
 - [Noetic](https://github.com/rt-net/crane_x7_description/tree/master)
 
 ### ROS 2
+- [Jazzy](https://github.com/rt-net/crane_x7_description/tree/support_jazzy)
+- [Humble](https://github.com/rt-net/crane_x7_description/tree/ros2)
 
 - [Foxy](https://github.com/rt-net/crane_x7_description/tree/foxy-devel)
 
@@ -26,7 +29,7 @@
 # 本パッケージをクローンし、依存関係をインストールする
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
-git clone -b ros2 https://github.com/rt-net/crane_x7_description
+git clone -b support_jazzy https://github.com/rt-net/crane_x7_description
 rosdep install -r -y -i --from-paths .
 
 # パッケージをビルドする
