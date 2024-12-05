@@ -59,12 +59,12 @@ def test_manipulator_links_file_path():
 
 
 def test_use_gazebo():
-    # use_gazeboが変更され、xacroにign_ros2_controlがセットされることを期待
+    # use_gazeboが変更され、xacroにgazebo_ros2_controlがセットされることを期待
     rdl = RobotDescriptionLoader()
     rdl.use_gazebo = 'true'
     rdl.gz_control_config_package = 'crane_x7_description'
     rdl.gz_control_config_file_path = 'config/dummy_controllers.yaml'
-    assert 'ign_ros2_control/IgnitionSystem' in exec_load(rdl)
+    assert 'gz_ros2_control/GazeboSimSystem' in exec_load(rdl)
 
 
 def test_use_d435():
