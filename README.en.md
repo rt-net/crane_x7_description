@@ -6,18 +6,16 @@
 
 ROS 2 package with URDF description macro for [CRANE-X7](https://rt-net.jp/products/crane-x7/).
 
-## Supported ROS distributions
+## Supported ROS 2 distributions
+
+- [Foxy](https://github.com/rt-net/crane_x7_description/tree/foxy-devel)
+- [Humble](https://github.com/rt-net/crane_x7_description/tree/humble)
+- [Jazzy](https://github.com/rt-net/crane_x7_description/tree/jazzy)
 
 ### ROS 1
 
 - [Melodic](https://github.com/rt-net/crane_x7_description/tree/v1.0.0)
 - [Noetic](https://github.com/rt-net/crane_x7_description/tree/v1.0.0)
-
-### ROS 2
-
-- [Foxy](https://github.com/rt-net/crane_x7_description/tree/foxy-devel)
-- [Humble](https://github.com/rt-net/crane_x7_description/tree/humble)
-- [Jazzy](https://github.com/rt-net/crane_x7_description/tree/jazzy)
 
 ## Installation
 
