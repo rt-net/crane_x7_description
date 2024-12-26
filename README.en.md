@@ -8,20 +8,16 @@ ROS 2 package with URDF description macro for [CRANE-X7](https://rt-net.jp/produ
 
 ## Supported ROS distributions
 
-- [Foxy](https://github.com/rt-net/crane_x7_description/tree/foxy-devel)
-- [Humble](https://github.com/rt-net/crane_x7_description/tree/ros2)
-- Jazzy
-
 ### ROS 1
 
 - [Melodic](https://github.com/rt-net/crane_x7_description/tree/v1.0.0)
 - [Noetic](https://github.com/rt-net/crane_x7_description/tree/v1.0.0)
 
 ### ROS 2
-- [Jazzy](https://github.com/rt-net/crane_x7_description/tree/support_jazzy)
-- [Humble](https://github.com/rt-net/crane_x7_description/tree/ros2)
-- [Foxy](https://github.com/rt-net/crane_x7_description/tree/ros2)
-- [Galactic](https://github.com/rt-net/crane_x7_description/tree/ros2)
+
+- [Foxy](https://github.com/rt-net/crane_x7_description/tree/foxy-devel)
+- [Humble](https://github.com/rt-net/crane_x7_description/tree/humble)
+- [Jazzy](https://github.com/rt-net/crane_x7_description/tree/jazzy)
 
 ## Installation
 
@@ -29,7 +25,7 @@ ROS 2 package with URDF description macro for [CRANE-X7](https://rt-net.jp/produ
 # Clone crane_x7_description and install dependencies
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
-git clone -b support_jazzy https://github.com/rt-net/crane_x7_description
+git clone -b $ROS_DISTRO https://github.com/rt-net/crane_x7_description.git
 rosdep install -r -y -i --from-paths .
 
 # Build the package
