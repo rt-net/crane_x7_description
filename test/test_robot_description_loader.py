@@ -74,3 +74,12 @@ def test_use_d435():
     rdl.gz_control_config_package = 'crane_x7_description'
     rdl.gz_control_config_file_path = 'config/dummy_controllers.yaml'
     assert 'realsense2_description/meshes/d435.dae' in exec_load(rdl)
+
+
+def test_use_mock_components():
+    # use_mock_componentsが変更され、xacroにmock_componentsがセットされることを期待
+    rdl = RobotDescriptionLoader()
+    rdl.use_mock_components = 'true'
+    rdl.gz_control_config_package = 'crane_x7_description'
+    rdl.gz_control_config_file_path = 'config/dummy_controllers.yaml'
+    assert 'mock_components/GenericSystem' in exec_load(rdl)
