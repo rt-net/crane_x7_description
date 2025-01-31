@@ -92,8 +92,8 @@
   <xacro:property name="JOINT_VELOCITY_LIMIT" value="4.81710873"/>
   <xacro:property name="JOINT_1_LOWER_LIMIT" value="${radians(-157)}"/>
   <xacro:property name="JOINT_1_UPPER_LIMIT" value="${radians(157)}"/>
-  <xacro:property name="JOINT_2_LOWER_LIMIT" value="${radians(-90)}"/>
-  <xacro:property name="JOINT_2_UPPER_LIMIT" value="${radians(90)}"/>
+  <xacro:property name="JOINT_2_LOWER_LIMIT" value="${radians(-92)}"/>
+  <xacro:property name="JOINT_2_UPPER_LIMIT" value="${radians(92)}"/>
   <xacro:property name="JOINT_3_LOWER_LIMIT" value="${radians(-157)}"/>
   <xacro:property name="JOINT_3_UPPER_LIMIT" value="${radians(157)}"/>
   <!-- JOINT_4はサーボ可動範囲を超えやすいため、LOWER_LIMITをサーボのリミット値より小さくする -->
