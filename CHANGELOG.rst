@@ -2,8 +2,8 @@
 Changelog for package crane_x7_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.0 (2025-02-04)
+------------------
 * joint2の可動範囲調整 (`#13 <https://github.com/rt-net/crane_x7_description/issues/13>`_)
 * mock components対応 (`#12 <https://github.com/rt-net/crane_x7_description/issues/12>`_)
 * joint_4の可動範囲を調整 (`#11 <https://github.com/rt-net/crane_x7_description/issues/11>`_)
