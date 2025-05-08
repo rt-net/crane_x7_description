@@ -19,17 +19,6 @@
   <xacro:arg name="gz_control_config_package" default="" />
   <xacro:arg name="gz_control_config_file_path" default="" />
 
-  <!-- Link to provide the location reference for the arm -->
-  <link name="base_link"/>
-
-  <!-- Used for fixing robot to Gazebo 'base_link' -->
-  <link name="world"/>
-
-  <joint name="base_link_to_world_joint" type="fixed">
-    <parent link="world"/>
-    <child link="base_link"/>
-  </joint>
-
   <xacro:property name="M_PI" value="3.14159"/>
 
   <xacro:property name="NAME_LINK_MOUNTING_PLATE" value="crane_x7_mounting_plate_link"/>
@@ -104,6 +93,15 @@
   <xacro:property name="JOINT_7_UPPER_LIMIT" value="${radians(167)}"/>
   <xacro:property name="JOINT_HAND_LOWER_LIMIT" value="${radians(-5)}"/>
   <xacro:property name="JOINT_HAND_UPPER_LIMIT" value="${radians(90)}"/>
+
+  <!-- Used for fixing robot 'base_link' to Gazebo 'world' -->
+  <link name="world"/>
+  <link name="base_link"/>
+
+  <joint name="base_link_to_world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
 
   <!-- Use the crane_x7 macro to configure a Crane X7 arm with desired joint
        velocities limit and lower/upper limits for the first joint. This
