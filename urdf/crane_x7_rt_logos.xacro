@@ -1,19 +1,10 @@
 <?xml version="1.0"?>
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:macro name="crane_x7_logos"
-      params="parent
-              name_link_logo_symbol_l
-              name_link_logo_symbol_r
-              name_link_logo_text_l
-              name_link_logo_text_r
-              name_joint_logo_symbol_l
-              name_joint_logo_symbol_r
-              name_joint_logo_text_l
-              name_joint_logo_text_r">
+  <xacro:macro name="crane_x7_logos" params="parent">
 
     <!-- Left side logo text -->
-    <link name="${name_link_logo_text_l}">
+    <link name="${NAME_LINK_LOGO_TEXT_L}">
       <visual>
         <origin xyz="0 0 0" rpy="-${M_PI/2} ${M_PI/2} 0"/>
         <geometry>
@@ -31,14 +22,14 @@
         </geometry>
       </collision>
     </link>
-    <joint name="${name_joint_logo_text_l}" type="fixed">
+    <joint name="${NAME_JOINT_LOGO_TEXT_L}" type="fixed">
       <parent link="${parent}"/>
-      <child link="${name_link_logo_text_l}"/>
+      <child link="${NAME_LINK_LOGO_TEXT_L}"/>
       <origin xyz="0 0.0345 0.095" rpy="0 0 0"/>
     </joint>
 
     <!-- Left side logo symbol -->
-    <link name="${name_link_logo_symbol_l}">
+    <link name="${NAME_LINK_LOGO_SYMBOL_L}">
       <visual>
         <origin xyz="0 0 0" rpy="-${M_PI/2} ${M_PI/2} 0"/>
         <geometry>
@@ -56,14 +47,14 @@
         </geometry>
       </collision>
     </link>
-    <joint name="${name_joint_logo_symbol_l}" type="fixed">
+    <joint name="${NAME_JOINT_LOGO_SYMBOL_L}" type="fixed">
       <parent link="${parent}"/>
-      <child link="${name_link_logo_symbol_l}"/>
+      <child link="${NAME_LINK_LOGO_SYMBOL_L}"/>
       <origin xyz="0 0.0345 0.132" rpy="0 0 0"/>
     </joint>
 
     <!-- Right side logo text -->
-    <link name="${name_link_logo_text_r}">
+    <link name="${NAME_LINK_LOGO_TEXT_R}">
       <visual>
         <origin xyz="0 0 0" rpy="${M_PI/2} -${M_PI/2} 0"/>
         <geometry>
@@ -81,14 +72,14 @@
         </geometry>
       </collision>
     </link>
-    <joint name="${name_joint_logo_text_r}" type="fixed">
+    <joint name="${NAME_JOINT_LOGO_TEXT_R}" type="fixed">
       <parent link="${parent}"/>
-      <child link="${name_link_logo_text_r}"/>
+      <child link="${NAME_LINK_LOGO_TEXT_R}"/>
       <origin xyz="0 -0.0345 0.104" rpy="0 0 0"/>
     </joint>
 
     <!-- Right side logo symbol -->
-    <link name="${name_link_logo_symbol_r}">
+    <link name="${NAME_LINK_LOGO_SYMBOL_R}">
       <visual>
         <origin xyz="0 0 0" rpy="${M_PI/2} -${M_PI/2} 0"/>
         <geometry>
@@ -106,9 +97,9 @@
         </geometry>
       </collision>
     </link>
-    <joint name="${name_joint_logo_symbol_r}" type="fixed">
+    <joint name="${NAME_JOINT_LOGO_SYMBOL_R}" type="fixed">
       <parent link="${parent}"/>
-      <child link="${name_link_logo_symbol_r}"/>
+      <child link="${NAME_LINK_LOGO_SYMBOL_R}"/>
       <origin xyz="0 -0.0345 0.065" rpy="0 0 0"/>
     </joint>
   </xacro:macro>

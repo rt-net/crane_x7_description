@@ -18,6 +18,15 @@
   <xacro:arg name="manipulator_links_file_path" default="" />
   <xacro:arg name="gz_control_config_package" default="" />
   <xacro:arg name="gz_control_config_file_path" default="" />
+  <xacro:property name="USE_D435" value="$(arg use_d435)"/>
+  <xacro:property name="USE_MOCK_COMPONENTS" value="$(arg use_mock_components)"/>
+  <xacro:property name="PORT_NAME" value="$(arg port_name)"/>
+  <xacro:property name="BAUDRATE" value="$(arg baudrate)"/>
+  <xacro:property name="TIMEOUT_SECONDS" value="$(arg timeout_seconds)"/>
+  <xacro:property name="MANIPULATOR_CONFIG_FILE_PATH" value="$(arg manipulator_config_file_path)"/>
+  <xacro:property name="MANIPULATOR_LINKS_FILE_PATH" value="$(arg manipulator_links_file_path)"/>
+  <xacro:property name="GZ_CONTROL_CONFIG_PACKAGE" value="$(arg gz_control_config_package)"/>
+  <xacro:property name="GZ_CONTROL_CONFIG_FILE_PATH" value="$(arg gz_control_config_file_path)"/>
 
   <xacro:property name="M_PI" value="3.14159"/>
 
@@ -107,76 +116,8 @@
        velocities limit and lower/upper limits for the first joint. This
        allows accessing different operational areas, e.g. left-handed vs.
        right-handed robots. -->
-  <xacro:crane_x7
-    parent="base_link"
-    name_link_mounting_plate="${NAME_LINK_MOUNTING_PLATE}"
-    name_link_base="${NAME_LINK_BASE}" 
-    name_link_1="${NAME_LINK_1}"
-    name_link_2="${NAME_LINK_2}"
-    name_link_3="${NAME_LINK_3}"
-    name_link_4="${NAME_LINK_4}"
-    name_link_5="${NAME_LINK_5}"
-    name_link_6="${NAME_LINK_6}"
-    name_link_7="${NAME_LINK_7}"
-    name_link_cover_2_l="${NAME_LINK_COVER_2_L}"
-    name_link_cover_2_r="${NAME_LINK_COVER_2_R}"
-    name_link_cover_4_l="${NAME_LINK_COVER_4_L}"
-    name_link_cover_4_r="${NAME_LINK_COVER_4_R}"
-    name_link_logo_symbol_l="${NAME_LINK_LOGO_SYMBOL_L}"
-    name_link_logo_symbol_r="${NAME_LINK_LOGO_SYMBOL_R}"
-    name_link_logo_text_l="${NAME_LINK_LOGO_TEXT_L}"
-    name_link_logo_text_r="${NAME_LINK_LOGO_TEXT_R}"
-    name_link_gripper_base="${NAME_LINK_GRIPPER_BASE}"
-    name_link_gripper_finger_a="${NAME_LINK_GRIPPER_FINGER_A}"
-    name_link_gripper_finger_b="${NAME_LINK_GRIPPER_FINGER_B}"
-    name_joint_mounting_plate="${NAME_JOINT_MOUNTING_PLATE}"
-    name_joint_base="${NAME_JOINT_BASE}"
-    name_joint_1="${NAME_JOINT_1}"
-    name_joint_2="${NAME_JOINT_2}"
-    name_joint_3="${NAME_JOINT_3}"
-    name_joint_4="${NAME_JOINT_4}"
-    name_joint_5="${NAME_JOINT_5}"
-    name_joint_6="${NAME_JOINT_6}"
-    name_joint_7="${NAME_JOINT_7}"
-    name_joint_cover_2_l="${NAME_JOINT_COVER_2_L}"
-    name_joint_cover_2_r="${NAME_JOINT_COVER_2_R}"
-    name_joint_cover_4_l="${NAME_JOINT_COVER_4_L}"
-    name_joint_cover_4_r="${NAME_JOINT_COVER_4_R}"
-    name_joint_logo_symbol_l="${NAME_JOINT_LOGO_SYMBOL_L}"
-    name_joint_logo_symbol_r="${NAME_JOINT_LOGO_SYMBOL_R}"
-    name_joint_logo_text_l="${NAME_JOINT_LOGO_TEXT_L}"
-    name_joint_logo_text_r="${NAME_JOINT_LOGO_TEXT_R}"
-    name_joint_gripper_finger_a="${NAME_JOINT_GRIPPER_FINGER_A}"
-    name_joint_gripper_finger_b="${NAME_JOINT_GRIPPER_FINGER_B}"
-    color_link_base="${COLOR_LINK_BASE}"
-    color_link_1="${COLOR_LINK_1}"
-    color_link_cover_2="${COLOR_LINK_COVER_2}"
-    color_link_2="${COLOR_LINK_2}"
-    color_link_3="${COLOR_LINK_3}"
-    color_link_cover_4="${COLOR_LINK_COVER_4}"
-    color_link_4="${COLOR_LINK_4}"
-    color_link_5="${COLOR_LINK_5}"
-    color_link_6="${COLOR_LINK_6}"
-    color_hand="${COLOR_HAND}"
-    joint_velocity_limit="${JOINT_VELOCITY_LIMIT}"
-    joint_1_lower_limit="${JOINT_1_LOWER_LIMIT}"
-    joint_1_upper_limit="${JOINT_1_UPPER_LIMIT}"
-    joint_2_lower_limit="${JOINT_2_LOWER_LIMIT}"
-    joint_2_upper_limit="${JOINT_2_UPPER_LIMIT}"
-    joint_3_lower_limit="${JOINT_3_LOWER_LIMIT}"
-    joint_3_upper_limit="${JOINT_3_UPPER_LIMIT}"
-    joint_4_lower_limit="${JOINT_4_LOWER_LIMIT}"
-    joint_4_upper_limit="${JOINT_4_UPPER_LIMIT}"
-    joint_5_lower_limit="${JOINT_5_LOWER_LIMIT}"
-    joint_5_upper_limit="${JOINT_5_UPPER_LIMIT}"
-    joint_6_lower_limit="${JOINT_6_LOWER_LIMIT}"
-    joint_6_upper_limit="${JOINT_6_UPPER_LIMIT}"
-    joint_7_lower_limit="${JOINT_7_LOWER_LIMIT}"
-    joint_7_upper_limit="${JOINT_7_UPPER_LIMIT}"
-    joint_hand_lower_limit="${JOINT_HAND_LOWER_LIMIT}"
-    joint_hand_upper_limit="${JOINT_HAND_UPPER_LIMIT}"
-    use_d435="$(arg use_d435)">
-    <origin xyz="0 0 0"/>
+  <xacro:crane_x7 parent="base_link">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:crane_x7>
 
   <xacro:unless value="$(arg use_gazebo)">
