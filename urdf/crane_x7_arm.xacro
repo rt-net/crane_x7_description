@@ -58,7 +58,7 @@
     <!-- crane_x7_link_1 -->
     <link name="${NAME_LINK_1}">
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 ${M_PI}"/>
+        <origin xyz="0 0 0" rpy="0 0 ${radians(180)}"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/base_revolute_part.stl"
               scale="1 1 1"/>
@@ -67,7 +67,7 @@
       </visual>
 
       <collision>
-        <!--<origin xyz="0 0 0" rpy="0 0 ${M_PI}"/>-->
+        <!--<origin xyz="0 0 0" rpy="0 0 ${radians(180)}"/>-->
         <!--<geometry>-->
           <!--<mesh filename="package://crane_x7_description/meshes/collision/base_revolute_part.stl"-->
               <!--scale="1 1 1"/>-->
@@ -78,7 +78,7 @@
         </geometry>
       </collision>
       <collision>
-        <origin xyz="0 0 0.064" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0.064" rpy="${radians(90)} 0 0"/>
         <geometry>
           <cylinder radius="0.034" length="0.0491"/>
         </geometry>
@@ -111,7 +111,7 @@
     <!-- crane_x7_link_2 -->
     <link name="${NAME_LINK_2}">
       <visual>
-        <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/rotating_link_type_1_fixed_part.stl"
               scale="1 1 1"/>
@@ -120,7 +120,7 @@
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/collision/rotating_link_type_1_fixed_part.stl"
               scale="1 1 1"/>
@@ -129,7 +129,7 @@
 
       <inertial>
         <mass value="0.136"/>
-        <origin xyz="3.10E-05 1.90E-05 3.42E-02" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="3.10E-05 1.90E-05 3.42E-02" rpy="${radians(90)} 0 0"/>
         <inertia ixx="1.68E-04" ixy="2.05E-08" ixz="-4.00E-07"
           iyy="9.62E-05" iyz="6.24E-08"
           izz="1.34E-04"/>
@@ -146,7 +146,7 @@
     <!-- crane_x7_link_cover_2_l -->
     <link name="${NAME_LINK_COVER_2_L}">
       <visual>
-        <origin xyz="0 0 0" rpy="-${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(-90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/joint_cover.stl"
               scale="1 1 1"/>
@@ -155,7 +155,7 @@
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="-${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(-90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/joint_cover.stl"
               scale="1 1 1"/>
@@ -173,7 +173,7 @@
     <!-- crane_x7_link_cover_2_r -->
     <link name="${NAME_LINK_COVER_2_R}">
       <visual>
-        <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/joint_cover.stl"
               scale="1 1 1"/>
@@ -182,7 +182,7 @@
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/joint_cover.stl"
               scale="1 1 1"/>
@@ -250,7 +250,7 @@
     <!-- crane_x7_link_4 -->
     <link name="${NAME_LINK_4}">
       <visual>
-        <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/rotating_link_type_2_fixed_part.stl"
               scale="1 1 1"/>
@@ -259,7 +259,7 @@
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/collision/rotating_link_type_2_fixed_part.stl"
               scale="1 1 1"/>
@@ -268,7 +268,7 @@
 
       <inertial>
         <mass value="0.222"/>
-        <origin xyz="-9.39E-03 6.40E-05 8.04E-02" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="-9.39E-03 6.40E-05 8.04E-02" rpy="${radians(90)} 0 0"/>
         <inertia ixx="4.89E-04" ixy="-3.90E-06" ixz="8.29E-08"
           iyy="1.14E-04" iyz="2.82E-06"
           izz="5.03E-04"/>
@@ -285,7 +285,7 @@
     <!-- crane_x7_link_cover_4_l -->
     <link name="${NAME_LINK_COVER_4_L}">
       <visual>
-        <origin xyz="0 0 0" rpy="-${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(-90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/joint_cover.stl"
               scale="1 1 1"/>
@@ -294,7 +294,7 @@
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="-${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(-90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/joint_cover.stl"
               scale="1 1 1"/>
@@ -312,7 +312,7 @@
     <!-- crane_x7_link_cover_4_r -->
     <link name="${NAME_LINK_COVER_4_R}">
       <visual>
-        <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/joint_cover.stl"
               scale="1 1 1"/>
@@ -321,7 +321,7 @@
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/joint_cover.stl"
               scale="1 1 1"/>
@@ -393,7 +393,7 @@
     <!-- crane_x7_link_6 -->
     <link name="${NAME_LINK_6}">
       <visual>
-        <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/wrist.stl"
               scale="1 1 1"/>
@@ -402,7 +402,7 @@
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/collision/wrist.stl"
               scale="1 1 1"/>
@@ -411,7 +411,7 @@
 
       <inertial>
         <mass value="0.14"/>
-        <origin xyz="6.10E-03 8.26E-04 -3.55E-03" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="6.10E-03 8.26E-04 -3.55E-03" rpy="${radians(90)} 0 0"/>
         <inertia ixx="4.01E-05" ixy="-2.91E-06" ixz="6.39E-07"
           iyy="6.13E-05" iyz="-4.90E-07"
           izz="7.35E-05"/>

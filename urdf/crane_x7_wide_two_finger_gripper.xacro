@@ -45,7 +45,7 @@
 
     <link name="${NAME_LINK_GRIPPER_FINGER_A}">
       <visual>
-        <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/wide_two_finger_gripper_finger_a.stl"
               scale="1 1 1"/>
@@ -54,7 +54,7 @@
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/collision/wide_two_finger_gripper_finger_a.stl"
               scale="1 1 1"/>
@@ -63,7 +63,7 @@
 
       <inertial>
         <mass value="0.0158"/>
-        <origin xyz="-2.65E-03 3.54E-03 2.69E-02" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="-2.65E-03 3.54E-03 2.69E-02" rpy="${radians(90)} 0 0"/>
         <inertia ixx="1.01E-05" ixy="-1.97E-07" ixz="-9.89E-08"
         iyy="4.95E-06" iyz="5.37E-07"
         izz="6.24E-06"/>
@@ -96,7 +96,7 @@
 
     <link name="${NAME_LINK_GRIPPER_FINGER_B}">
       <visual>
-        <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/wide_two_finger_gripper_finger_b.stl"
               scale="1 1 1"/>
@@ -105,7 +105,7 @@
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/collision/wide_two_finger_gripper_finger_b.stl"
               scale="1 1 1"/>
@@ -114,7 +114,7 @@
 
       <inertial>
         <mass value="0.0139"/>
-        <origin xyz="3.01E-03 2.85E-03 3.09E-02" rpy="${M_PI/2} 0 0"/>
+        <origin xyz="3.01E-03 2.85E-03 3.09E-02" rpy="${radians(90)} 0 0"/>
         <inertia ixx="7.48E-06" ixy="3.61E-07" ixz="6.34E-08"
         iyy="4.09E-06" iyz="2.28E-07"
         izz="4.37E-06"/>

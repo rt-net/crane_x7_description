@@ -47,8 +47,6 @@
     <color rgba="0.3 0.3 1.0 1.0"/>
   </material>
 
-  <xacro:property name="M_PI" value="3.14159"/>
-
   <xacro:property name="NAME_LINK_MOUNTING_PLATE" value="crane_x7_mounting_plate_link"/>
   <xacro:property name="NAME_LINK_BASE" value="crane_x7_shoulder_fixed_part_link"/>
   <xacro:property name="NAME_LINK_1" value="crane_x7_shoulder_revolute_part_link"/>

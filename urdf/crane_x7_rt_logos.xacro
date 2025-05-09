@@ -6,7 +6,7 @@
     <!-- Left side logo text -->
     <link name="${NAME_LINK_LOGO_TEXT_L}">
       <visual>
-        <origin xyz="0 0 0" rpy="-${M_PI/2} ${M_PI/2} 0"/>
+        <origin xyz="0 0 0" rpy="${radians(-90)} ${radians(90)} 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/rtcorp_logo_name.stl"
               scale="1 1 1"/>
@@ -15,7 +15,7 @@
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="-${M_PI/2} ${M_PI/2} 0"/>
+        <origin xyz="0 0 0" rpy="${radians(-90)} ${radians(90)} 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/rtcorp_logo_name.stl"
               scale="1 1 1"/>
@@ -31,7 +31,7 @@
     <!-- Left side logo symbol -->
     <link name="${NAME_LINK_LOGO_SYMBOL_L}">
       <visual>
-        <origin xyz="0 0 0" rpy="-${M_PI/2} ${M_PI/2} 0"/>
+        <origin xyz="0 0 0" rpy="${radians(-90)} ${radians(90)} 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/rtcorp_logo_rabbit.stl"
               scale="1 1 1"/>
@@ -40,7 +40,7 @@
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="-${M_PI/2} ${M_PI/2} 0"/>
+        <origin xyz="0 0 0" rpy="${radians(-90)} ${radians(90)} 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/rtcorp_logo_rabbit.stl"
               scale="1 1 1"/>
@@ -56,7 +56,7 @@
     <!-- Right side logo text -->
     <link name="${NAME_LINK_LOGO_TEXT_R}">
       <visual>
-        <origin xyz="0 0 0" rpy="${M_PI/2} -${M_PI/2} 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} ${radians(-90)} 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/rtcorp_logo_name.stl"
               scale="1 1 1"/>
@@ -65,7 +65,7 @@
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="${M_PI/2} -${M_PI/2} 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} ${radians(-90)} 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/rtcorp_logo_name.stl"
               scale="1 1 1"/>
@@ -81,7 +81,7 @@
     <!-- Right side logo symbol -->
     <link name="${NAME_LINK_LOGO_SYMBOL_R}">
       <visual>
-        <origin xyz="0 0 0" rpy="${M_PI/2} -${M_PI/2} 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} ${radians(-90)} 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/rtcorp_logo_rabbit.stl"
               scale="1 1 1"/>
@@ -90,7 +90,7 @@
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="${M_PI/2} -${M_PI/2} 0"/>
+        <origin xyz="0 0 0" rpy="${radians(90)} ${radians(-90)} 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/rtcorp_logo_rabbit.stl"
               scale="1 1 1"/>
