@@ -6,25 +6,6 @@
   <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7_wide_two_finger_gripper.xacro"/>
   <xacro:include filename="$(find crane_x7_description)/urdf/crane_x7_rt_logos.xacro"/>
 
-  <material name="black">
-    <color rgba="0.2 0.2 0.2 1.0"/>
-  </material>
-  <material name="white">
-    <color rgba="0.95 0.95 0.95 1.0"/>
-  </material>
-  <material name="silver">
-    <color rgba="0.75 0.75 0.75 1.0"/>
-  </material>
-  <material name="red">
-    <color rgba="1.0 0.3 0.3 1.0"/>
-  </material>
-  <material name="green">
-    <color rgba="0.3 1.0 0.3 1.0"/>
-  </material>
-  <material name="blue">
-    <color rgba="0.3 0.3 1.0 1.0"/>
-  </material>
-
   <xacro:macro name="crane_x7" params="parent *origin">
 
     <!-- Mounting plate

@@ -28,6 +28,25 @@
   <xacro:property name="GZ_CONTROL_CONFIG_PACKAGE" value="$(arg gz_control_config_package)"/>
   <xacro:property name="GZ_CONTROL_CONFIG_FILE_PATH" value="$(arg gz_control_config_file_path)"/>
 
+  <material name="black">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+  <material name="white">
+    <color rgba="0.95 0.95 0.95 1.0"/>
+  </material>
+  <material name="silver">
+    <color rgba="0.75 0.75 0.75 1.0"/>
+  </material>
+  <material name="red">
+    <color rgba="1.0 0.3 0.3 1.0"/>
+  </material>
+  <material name="green">
+    <color rgba="0.3 1.0 0.3 1.0"/>
+  </material>
+  <material name="blue">
+    <color rgba="0.3 0.3 1.0 1.0"/>
+  </material>
+
   <xacro:property name="M_PI" value="3.14159"/>
 
   <xacro:property name="NAME_LINK_MOUNTING_PLATE" value="crane_x7_mounting_plate_link"/>
