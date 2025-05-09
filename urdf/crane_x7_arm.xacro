@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:property name="SCALE_MM" value="0.001"/>
-  <xacro:property name="SCALE_CM" value="0.01"/>
 
   <!-- Macro for the standard CRANE-X7 configuration -->
   <xacro:macro name="crane_x7_arm" params="parent *origin">
