@@ -35,10 +35,9 @@ def generate_launch_description():
                 output='log',
                 arguments=['-d', rviz_config_file])
 
-    ld = LaunchDescription()
-    ld.add_action(declare_use_d435)
-    ld.add_action(rsp)
-    ld.add_action(jsp)
-    ld.add_action(rviz)
-
-    return ld
+    return LaunchDescription([
+        declare_use_d435,
+        rsp,
+        jsp,
+        rviz,
+    ])
