@@ -29,9 +29,9 @@ def generate_launch_description():
 
     rviz_config_file = get_package_share_directory(
         'crane_x7_description') + '/launch/display.rviz'
-    rviz = Node(package='rviz2',
+    rviz = Node(name='rviz2',
+                package='rviz2',
                 executable='rviz2',
-                name='rviz2',
                 output='log',
                 arguments=['-d', rviz_config_file])
 
