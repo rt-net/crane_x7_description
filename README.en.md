@@ -24,7 +24,7 @@ ROS 2 package with URDF description macro for [CRANE-X7](https://rt-net.jp/produ
 
 ## Requirements
 
-- Raspberry Pi Mouse
+- CRANE-X7
   - [Summary](https://rt-net.jp/products/crane-x7/)
   - [RT Robot Shop](https://www.rt-shop.jp/index.php?main_page=product_info&products_id=3660)
 - OS
@@ -53,7 +53,7 @@ source ~/ros2_ws/install/setup.bash
 
 ## How to Use
 
-Display a CRANE-X7 robot model on RViz with the following command:
+Run the following command to display the CRANE-X7 model in RViz:
 
 ```sh
 ros2 launch crane_x7_description display.launch.py
