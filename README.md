@@ -9,11 +9,11 @@
 ## Table of Contents
 
 - [crane\_x7\_description](#crane_x7_description)
-- [Supported ROS distributions](#supported-ros-distributions)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [How to Use](#how-to-use)
-- [Proprietary Rights](#proprietary-rights)
+  - [Supported ROS distributions](#supported-ros-distributions)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [How to Use](#how-to-use)
+  - [Proprietary Rights](#proprietary-rights)
 
 ## Supported ROS distributions
 
