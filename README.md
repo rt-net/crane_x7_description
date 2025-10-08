@@ -24,9 +24,6 @@
 
 ## Requirements
 
-- CRANE-X7
-  - [Summary](https://rt-net.jp/products/crane-x7/)
-  - [RT Robot Shop](https://www.rt-shop.jp/index.php?main_page=product_info&products_id=3660)
 - OS
   - Ubuntu Desktop 24.04
 - ROS 2
