@@ -6,33 +6,48 @@
 
 [CRANE-X7](https://rt-net.jp/products/crane-x7/)のURDFファイルを含むROS 2パッケージです。
 
-## サポートするROS 2ディストリビューション
+## Table of Contents
 
-- [Foxy](https://github.com/rt-net/crane_x7_description/tree/foxy-devel)
-- [Humble](https://github.com/rt-net/crane_x7_description/tree/humble)
-- [Jazzy](https://github.com/rt-net/crane_x7_description/tree/jazzy)
+- [crane\_x7\_description](#crane_x7_description)
+  - [Supported ROS distributions](#supported-ros-distributions)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [How to Use](#how-to-use)
+  - [Proprietary Rights](#proprietary-rights)
 
-### ROS 1
+## Supported ROS distributions
 
-- [Melodic](https://github.com/rt-net/crane_x7_description/tree/v1.0.0)
-- [Noetic](https://github.com/rt-net/crane_x7_description/tree/v1.0.0)
+### ROS 2
 
-## インストール方法
+- [Humble Hawksbill](https://github.com/rt-net/crane_x7_description/tree/humble)
+- [Jazzy Jalisco](https://github.com/rt-net/crane_x7_description/tree/jazzy)
 
-```sh
-# 本パッケージをクローンし、依存関係をインストールする
-mkdir -p ~/ros2_ws/src
-cd ~/ros2_ws/src
+## Requirements
+
+- OS
+  - Ubuntu Desktop 24.04
+- ROS 2
+  - Jazzy Jalisco
+
+## Installation
+
+```bash
+# Create workspace directory
+mkdir -p ~/ros2_ws/src && cd ~/ros2_ws/src
+
+# Clone package
 git clone -b $ROS_DISTRO https://github.com/rt-net/crane_x7_description.git
+
+# Install dependencies
 rosdep install -r -y -i --from-paths .
 
-# パッケージをビルドする
+# Build & Install
 cd ~/ros2_ws
 colcon build --symlink-install
-source install/setup.bash
+source ~/ros2_ws/install/setup.bash
 ```
 
-## 使用方法
+## How to Use
 
 次のコマンドを実行するとRViz上にCRANE-X7のモデルが表示されます
 
@@ -51,7 +66,7 @@ ros2 launch crane_x7_description display.launch.py use_d435:=true
 ![display_launch_use_d435](https://rt-net.github.io/images/crane-x7/display_launch_use_d435.png)
 
 
-## 知的財産権について
+## Proprietary Rights
 
 CRANE-X7は、アールティが開発した研究用アームロボットです。
 このリポジトリのデータ等に関するライセンスについては、[LICENSE](./LICENSE)ファイルをご参照ください。

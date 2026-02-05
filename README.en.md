@@ -6,35 +6,51 @@
 
 ROS 2 package with URDF description macro for [CRANE-X7](https://rt-net.jp/products/crane-x7/).
 
-## Supported ROS 2 distributions
+## Table of Contents
 
-- [Foxy](https://github.com/rt-net/crane_x7_description/tree/foxy-devel)
-- [Humble](https://github.com/rt-net/crane_x7_description/tree/humble)
-- [Jazzy](https://github.com/rt-net/crane_x7_description/tree/jazzy)
+- [crane\_x7\_description](#crane_x7_description)
+  - [Supported ROS distributions](#supported-ros-distributions)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [How to Use](#how-to-use)
+  - [Proprietary Rights](#proprietary-rights)
 
-### ROS 1
+## Supported ROS distributions
 
-- [Melodic](https://github.com/rt-net/crane_x7_description/tree/v1.0.0)
-- [Noetic](https://github.com/rt-net/crane_x7_description/tree/v1.0.0)
+### ROS 2
+
+- [Humble Hawksbill](https://github.com/rt-net/crane_x7_description/tree/humble)
+- [Jazzy Jalisco](https://github.com/rt-net/crane_x7_description/tree/jazzy)
+
+## Requirements
+
+- OS
+  - Ubuntu Desktop 24.04
+- ROS 2
+  - Jazzy Jalisco
 
 ## Installation
 
-```sh
-# Clone crane_x7_description and install dependencies
-mkdir -p ~/ros2_ws/src
-cd ~/ros2_ws/src
+```bash
+# Create workspace directory
+mkdir -p ~/ros2_ws/src && cd ~/ros2_ws/src
+
+# Clone package
 git clone -b $ROS_DISTRO https://github.com/rt-net/crane_x7_description.git
+
+# Install dependencies
 rosdep install -r -y -i --from-paths .
 
-# Build the package
+# Build & Install
 cd ~/ros2_ws
 colcon build --symlink-install
-source install/setup.bash
+source ~/ros2_ws/install/setup.bash
 ```
+
 
 ## How to Use
 
-Display a CRANE-X7 robot model on RViz with the following command:
+Run the following command to display the CRANE-X7 model in RViz:
 
 ```sh
 ros2 launch crane_x7_description display.launch.py
