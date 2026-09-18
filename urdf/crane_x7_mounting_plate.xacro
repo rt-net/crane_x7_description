@@ -8,7 +8,6 @@
 
   <xacro:macro name="crane_x7_mounting_plate"
       params="parent
-              color
               *origin">
 
     <joint name="crane_x7_mounting_plate_joint" type="fixed">
@@ -24,7 +23,7 @@
           <mesh filename="package://crane_x7_description/meshes/visual/mounting_plate.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="${color}"/>
+        <material name="black"/>
       </visual>
 
       <collision>

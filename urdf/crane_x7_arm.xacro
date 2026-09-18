@@ -7,15 +7,6 @@
   <!-- Macro for the standard CRANE-X7 configuration -->
   <xacro:macro name="crane_x7_arm"
       params="parent
-              color_link_base
-              color_link_1
-              color_link_cover_2
-              color_link_2
-              color_link_3
-              color_link_cover_4
-              color_link_4
-              color_link_5
-              color_link_6
               joint_velocity_limit
               joint_1_lower_limit
               joint_1_upper_limit
@@ -48,7 +39,7 @@
           <mesh filename="package://crane_x7_description/meshes/visual/base_fixed_part.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="${color_link_base}"/>
+        <material name="red"/>
       </visual>
 
       <collision>
@@ -86,7 +77,7 @@
           <mesh filename="package://crane_x7_description/meshes/visual/base_revolute_part.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="${color_link_1}"/>
+        <material name="white"/>
       </visual>
 
       <collision>
@@ -134,7 +125,7 @@
           <mesh filename="package://crane_x7_description/meshes/visual/rotating_link_type_1_fixed_part.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="${color_link_2}"/>
+        <material name="white"/>
       </visual>
 
       <collision>
@@ -169,7 +160,7 @@
           <mesh filename="package://crane_x7_description/meshes/visual/joint_cover.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="${color_link_cover_2}"/>
+        <material name="red"/>
       </visual>
 
       <collision>
@@ -196,7 +187,7 @@
           <mesh filename="package://crane_x7_description/meshes/visual/joint_cover.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="${color_link_cover_2}"/>
+        <material name="red"/>
       </visual>
 
       <collision>
@@ -229,7 +220,7 @@
           <mesh filename="package://crane_x7_description/meshes/visual/rotating_link_type_1_revolute_part.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="${color_link_3}"/>
+        <material name="white"/>
       </visual>
 
       <collision>
@@ -269,7 +260,7 @@
           <mesh filename="package://crane_x7_description/meshes/visual/rotating_link_type_2_fixed_part.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="${color_link_4}"/>
+        <material name="white"/>
       </visual>
 
       <collision>
@@ -304,7 +295,7 @@
           <mesh filename="package://crane_x7_description/meshes/visual/joint_cover.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="${color_link_cover_4}"/>
+        <material name="red"/>
       </visual>
 
       <collision>
@@ -331,7 +322,7 @@
           <mesh filename="package://crane_x7_description/meshes/visual/joint_cover.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="${color_link_cover_4}"/>
+        <material name="red"/>
       </visual>
 
       <collision>
@@ -361,7 +352,7 @@
           <mesh filename="package://crane_x7_description/meshes/visual/rotating_link_type_2_revolute_part.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="${color_link_5}"/>
+        <material name="white"/>
       </visual>
 
       <collision>
@@ -403,7 +394,7 @@
           <mesh filename="package://crane_x7_description/meshes/visual/wrist.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="${color_link_6}"/>
+        <material name="white"/>
       </visual>
 
       <collision>

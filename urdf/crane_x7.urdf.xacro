@@ -37,17 +37,6 @@
 
   <xacro:property name="M_PI" value="3.14159"/>
 
-  <xacro:property name="COLOR_LINK_BASE" value="red"/>
-  <xacro:property name="COLOR_LINK_1" value="white"/>
-  <xacro:property name="COLOR_LINK_COVER_2" value="red"/>
-  <xacro:property name="COLOR_LINK_2" value="white"/>
-  <xacro:property name="COLOR_LINK_3" value="white"/>
-  <xacro:property name="COLOR_LINK_COVER_4" value="red"/>
-  <xacro:property name="COLOR_LINK_4" value="white"/>
-  <xacro:property name="COLOR_LINK_5" value="white"/>
-  <xacro:property name="COLOR_LINK_6" value="white"/>
-  <xacro:property name="COLOR_HAND" value="red"/>
-
   <xacro:property name="JOINT_VELOCITY_LIMIT" value="4.81710873"/>
   <xacro:property name="JOINT_1_LOWER_LIMIT" value="${radians(-157)}"/>
   <xacro:property name="JOINT_1_UPPER_LIMIT" value="${radians(157)}"/>
@@ -75,16 +64,6 @@
        right-handed robots. -->
   <xacro:crane_x7
     parent="base_link"
-    color_link_base="${COLOR_LINK_BASE}"
-    color_link_1="${COLOR_LINK_1}"
-    color_link_cover_2="${COLOR_LINK_COVER_2}"
-    color_link_2="${COLOR_LINK_2}"
-    color_link_3="${COLOR_LINK_3}"
-    color_link_cover_4="${COLOR_LINK_COVER_4}"
-    color_link_4="${COLOR_LINK_4}"
-    color_link_5="${COLOR_LINK_5}"
-    color_link_6="${COLOR_LINK_6}"
-    color_hand="${COLOR_HAND}"
     joint_velocity_limit="${JOINT_VELOCITY_LIMIT}"
     joint_1_lower_limit="${JOINT_1_LOWER_LIMIT}"
     joint_1_upper_limit="${JOINT_1_UPPER_LIMIT}"

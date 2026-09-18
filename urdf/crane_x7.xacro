@@ -27,16 +27,6 @@
 
   <xacro:macro name="crane_x7"
       params="parent
-              color_link_base
-              color_link_1
-              color_link_cover_2
-              color_link_2
-              color_link_3
-              color_link_cover_4
-              color_link_4
-              color_link_5
-              color_link_6
-              color_hand
               joint_velocity_limit
               joint_1_lower_limit
               joint_1_upper_limit
@@ -60,23 +50,13 @@
     <!-- Mounting plate
          (Root of the manipulator's TF tree) -->
     <xacro:crane_x7_mounting_plate
-        parent="${parent}"
-        color="black">
+      parent="${parent}">
       <xacro:insert_block name="origin"/>
     </xacro:crane_x7_mounting_plate>
 
     <!-- Arm -->
     <xacro:crane_x7_arm
       parent="crane_x7_mounting_plate_link"
-        color_link_base="${color_link_base}"
-        color_link_1="${color_link_1}"
-        color_link_cover_2="${color_link_cover_2}"
-        color_link_2="${color_link_2}"
-        color_link_3="${color_link_3}"
-        color_link_cover_4="${color_link_cover_4}"
-        color_link_4="${color_link_4}"
-        color_link_5="${color_link_5}"
-        color_link_6="${color_link_6}"
         joint_velocity_limit="${joint_velocity_limit}"
         joint_1_lower_limit="${joint_1_lower_limit}"
         joint_1_upper_limit="${joint_1_upper_limit}"
@@ -109,7 +89,6 @@
 
     <!-- End effector -->
     <xacro:crane_x7_wide_two_finger_gripper
-        color="${color_hand}"
         joint_velocity_limit="${joint_velocity_limit}"
         joint_hand_lower_limit="${joint_hand_lower_limit}"
         joint_hand_upper_limit="${joint_hand_upper_limit}"/>
