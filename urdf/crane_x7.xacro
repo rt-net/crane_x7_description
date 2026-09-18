@@ -27,45 +27,6 @@
 
   <xacro:macro name="crane_x7"
       params="parent
-              name_link_mounting_plate
-              name_link_base
-              name_link_1
-              name_link_2
-              name_link_3
-              name_link_4
-              name_link_5
-              name_link_6
-              name_link_7
-              name_link_cover_2_l
-              name_link_cover_2_r
-              name_link_cover_4_l
-              name_link_cover_4_r
-              name_link_logo_symbol_l
-              name_link_logo_symbol_r
-              name_link_logo_text_l
-              name_link_logo_text_r
-              name_link_gripper_base
-              name_link_gripper_finger_a
-              name_link_gripper_finger_b
-              name_joint_mounting_plate
-              name_joint_base
-              name_joint_1
-              name_joint_2
-              name_joint_3
-              name_joint_4
-              name_joint_5
-              name_joint_6
-              name_joint_7
-              name_joint_cover_2_l
-              name_joint_cover_2_r
-              name_joint_cover_4_l
-              name_joint_cover_4_r
-              name_joint_logo_symbol_l
-              name_joint_logo_symbol_r
-              name_joint_logo_text_l
-              name_joint_logo_text_r
-              name_joint_gripper_finger_a
-              name_joint_gripper_finger_b
               color_link_base
               color_link_1
               color_link_cover_2
@@ -100,47 +61,13 @@
          (Root of the manipulator's TF tree) -->
     <xacro:crane_x7_mounting_plate
         parent="${parent}"
-        name_link_mounting_plate="${name_link_mounting_plate}"
-        name_joint_mounting_plate="${name_joint_mounting_plate}"
         color="black">
       <xacro:insert_block name="origin"/>
     </xacro:crane_x7_mounting_plate>
 
     <!-- Arm -->
     <xacro:crane_x7_arm
-        parent="${name_link_mounting_plate}"
-        name_link_base="${name_link_base}"
-        name_link_1="${name_link_1}"
-        name_link_2="${name_link_2}"
-        name_link_3="${name_link_3}"
-        name_link_4="${name_link_4}"
-        name_link_5="${name_link_5}"
-        name_link_6="${name_link_6}"
-        name_link_7="${name_link_7}"
-        name_link_cover_2_l="${name_link_cover_2_l}"
-        name_link_cover_2_r="${name_link_cover_2_r}"
-        name_link_cover_4_l="${name_link_cover_4_l}"
-        name_link_cover_4_r="${name_link_cover_4_r}"
-        name_link_logo_symbol_l="${name_link_logo_symbol_l}"
-        name_link_logo_symbol_r="${name_link_logo_symbol_r}"
-        name_link_logo_text_l="${name_link_logo_text_l}"
-        name_link_logo_text_r="${name_link_logo_text_r}"
-        name_joint_base="${name_joint_base}"
-        name_joint_1="${name_joint_1}"
-        name_joint_2="${name_joint_2}"
-        name_joint_3="${name_joint_3}"
-        name_joint_4="${name_joint_4}"
-        name_joint_5="${name_joint_5}"
-        name_joint_6="${name_joint_6}"
-        name_joint_7="${name_joint_7}"
-        name_joint_cover_2_l="${name_joint_cover_2_l}"
-        name_joint_cover_2_r="${name_joint_cover_2_r}"
-        name_joint_cover_4_l="${name_joint_cover_4_l}"
-        name_joint_cover_4_r="${name_joint_cover_4_r}"
-        name_joint_logo_symbol_l="${name_joint_logo_symbol_l}"
-        name_joint_logo_symbol_r="${name_joint_logo_symbol_r}"
-        name_joint_logo_text_l="${name_joint_logo_text_l}"
-        name_joint_logo_text_r="${name_joint_logo_text_r}"
+      parent="crane_x7_mounting_plate_link"
         color_link_base="${color_link_base}"
         color_link_1="${color_link_1}"
         color_link_cover_2="${color_link_cover_2}"
@@ -172,7 +99,7 @@
     <xacro:if value="$(arg use_d435)">
       <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
       <xacro:sensor_d435
-          parent="${name_link_7}"
+          parent="crane_x7_gripper_base_link"
           use_nominal_extrinsics="false"
           add_plug="false"
           use_mesh="true">
@@ -182,11 +109,6 @@
 
     <!-- End effector -->
     <xacro:crane_x7_wide_two_finger_gripper
-        name_link_gripper_base="${name_link_gripper_base}"
-        name_link_gripper_finger_a="${name_link_gripper_finger_a}"
-        name_link_gripper_finger_b="${name_link_gripper_finger_b}"
-        name_joint_gripper_finger_a="${name_joint_gripper_finger_a}"
-        name_joint_gripper_finger_b="${name_joint_gripper_finger_b}"
         color="${color_hand}"
         joint_velocity_limit="${joint_velocity_limit}"
         joint_hand_lower_limit="${joint_hand_lower_limit}"

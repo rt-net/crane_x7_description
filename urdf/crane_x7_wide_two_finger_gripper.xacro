@@ -5,17 +5,12 @@
   <xacro:property name="SCALE_CM" value="0.01"/>
 
   <xacro:macro name="crane_x7_wide_two_finger_gripper"
-    params="name_link_gripper_base
-            name_link_gripper_finger_a
-            name_link_gripper_finger_b
-            name_joint_gripper_finger_a
-            name_joint_gripper_finger_b
-            color
+    params="color
             joint_velocity_limit
             joint_hand_lower_limit
             joint_hand_upper_limit">
 
-    <link name="${name_link_gripper_base}">
+    <link name="crane_x7_gripper_base_link">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
@@ -42,16 +37,16 @@
       </inertial>
     </link>
 
-    <joint name="${name_joint_gripper_finger_a}" type="revolute">
+    <joint name="crane_x7_gripper_finger_a_joint" type="revolute">
       <origin xyz="-0.012 0.0 0.024" rpy="0 0 0"/>
       <axis xyz="0 -1 0"/>
       <limit effort="4.0" velocity="${joint_velocity_limit}" lower="${joint_hand_lower_limit}" upper="${joint_hand_upper_limit}"/>
-      <parent link="${name_link_gripper_base}"/>
-      <child link="${name_link_gripper_finger_a}"/>
+      <parent link="crane_x7_gripper_base_link"/>
+      <child link="crane_x7_gripper_finger_a_link"/>
       <dynamics damping="1.0e-6" friction="8.0e-1"/>
     </joint>
 
-    <link name="${name_link_gripper_finger_a}">
+    <link name="crane_x7_gripper_finger_a_link">
       <visual>
         <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
         <geometry>
@@ -78,17 +73,17 @@
       </inertial>
     </link>
 
-    <joint name="${name_joint_gripper_finger_b}" type="revolute">
+    <joint name="crane_x7_gripper_finger_b_joint" type="revolute">
       <origin xyz="0.012 0.0 0.024" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <limit effort="4.0" velocity="${joint_velocity_limit}" lower="${joint_hand_lower_limit}" upper="${joint_hand_upper_limit}"/>
-      <parent link="${name_link_gripper_base}"/>
-      <child link="${name_link_gripper_finger_b}"/>
-      <mimic joint="${name_joint_gripper_finger_a}"/>
+      <parent link="crane_x7_gripper_base_link"/>
+      <child link="crane_x7_gripper_finger_b_link"/>
+      <mimic joint="crane_x7_gripper_finger_a_joint"/>
       <dynamics damping="1.0e-6" friction="8.0e-1"/>
     </joint>
 
-    <link name="${name_link_gripper_finger_b}">
+    <link name="crane_x7_gripper_finger_b_link">
       <visual>
         <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
         <geometry>

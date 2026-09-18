@@ -30,26 +30,7 @@
   </xacro:macro>
 
   <xacro:macro name="gazebo_robot_settings"
-    params="name_link_mounting_plate
-            name_link_base
-            name_link_1
-            name_link_2
-            name_link_3
-            name_link_4
-            name_link_5
-            name_link_6
-            name_link_cover_2_l
-            name_link_cover_2_r
-            name_link_cover_4_l
-            name_link_cover_4_r
-            name_link_logo_symbol_l
-            name_link_logo_symbol_r
-            name_link_logo_text_l
-            name_link_logo_text_r
-            name_link_gripper_base
-            name_link_gripper_finger_a
-            name_link_gripper_finger_b
-            config_package
+    params="config_package
             config_file_path
             ">
 
@@ -59,81 +40,81 @@
       </plugin>
     </gazebo>
 
-    <gazebo reference="${name_link_mounting_plate}">
+    <gazebo reference="crane_x7_mounting_plate_link">
       <xacro:material_gazebo_black/>
     </gazebo>
 
-    <gazebo reference="${name_link_base}">
+    <gazebo reference="crane_x7_shoulder_fixed_part_link">
       <xacro:material_gazebo_red/>
     </gazebo>
 
-    <gazebo reference="${name_link_1}">
+    <gazebo reference="crane_x7_shoulder_revolute_part_link">
       <xacro:material_gazebo_white/>
     </gazebo>
 
-    <gazebo reference="${name_link_2}">
+    <gazebo reference="crane_x7_upper_arm_fixed_part_link">
       <xacro:material_gazebo_white/>
     </gazebo>
 
-    <gazebo reference="${name_link_3}">
+    <gazebo reference="crane_x7_upper_arm_revolute_part_link">
       <xacro:material_gazebo_white/>
     </gazebo>
 
-    <gazebo reference="${name_link_4}">
+    <gazebo reference="crane_x7_lower_arm_fixed_part_link">
       <xacro:material_gazebo_white/>
     </gazebo>
 
-    <gazebo reference="${name_link_5}">
+    <gazebo reference="crane_x7_lower_arm_revolute_part_link">
       <xacro:material_gazebo_white/>
     </gazebo>
 
-    <gazebo reference="${name_link_6}">
+    <gazebo reference="crane_x7_wrist_link">
       <xacro:material_gazebo_white/>
     </gazebo>
 
-    <gazebo reference="${name_link_cover_2_l}">
+    <gazebo reference="crane_x7_upper_arm_fixed_part_joint_cover_l_link">
       <xacro:material_gazebo_red/>
     </gazebo>
 
-    <gazebo reference="${name_link_cover_2_r}">
+    <gazebo reference="crane_x7_upper_arm_fixed_part_joint_cover_r_link">
       <xacro:material_gazebo_red/>
     </gazebo>
 
-    <gazebo reference="${name_link_cover_4_l}">
+    <gazebo reference="crane_x7_lower_arm_fixed_part_joint_cover_l_link">
       <xacro:material_gazebo_red/>
     </gazebo>
 
-    <gazebo reference="${name_link_cover_4_r}">
+    <gazebo reference="crane_x7_lower_arm_fixed_part_joint_cover_r_link">
       <xacro:material_gazebo_red/>
     </gazebo>
 
-    <gazebo reference="${name_link_logo_symbol_l}">
+    <gazebo reference="crane_x7_lower_arm_revolute_part_logo_symbol_l_link">
       <xacro:material_gazebo_red/>
     </gazebo>
 
-    <gazebo reference="${name_link_logo_symbol_r}">
+    <gazebo reference="crane_x7_lower_arm_revolute_part_logo_symbol_r_link">
       <xacro:material_gazebo_red/>
     </gazebo>
 
-    <gazebo reference="${name_link_logo_text_l}">
+    <gazebo reference="crane_x7_lower_arm_revolute_part_logo_text_l_link">
       <xacro:material_gazebo_black/>
     </gazebo>
 
-    <gazebo reference="${name_link_logo_text_r}">
+    <gazebo reference="crane_x7_lower_arm_revolute_part_logo_text_r_link">
       <xacro:material_gazebo_black/>
     </gazebo>
 
-    <gazebo reference="${name_link_gripper_base}">
+    <gazebo reference="crane_x7_gripper_base_link">
       <xacro:material_gazebo_red/>
     </gazebo>
 
-    <gazebo reference="${name_link_gripper_finger_a}">
+    <gazebo reference="crane_x7_gripper_finger_a_link">
       <mu1>0.8</mu1>
       <mu2>0.8</mu2>
       <xacro:material_gazebo_red/>
     </gazebo>
 
-    <gazebo reference="${name_link_gripper_finger_b}">
+    <gazebo reference="crane_x7_gripper_finger_b_link">
       <mu1>0.8</mu1>
       <mu2>0.8</mu2>
       <xacro:material_gazebo_red/>

@@ -7,38 +7,6 @@
   <!-- Macro for the standard CRANE-X7 configuration -->
   <xacro:macro name="crane_x7_arm"
       params="parent
-              name_link_base
-              name_link_1
-              name_link_2
-              name_link_3
-              name_link_4
-              name_link_5
-              name_link_6
-              name_link_7
-              name_link_cover_2_l
-              name_link_cover_2_r
-              name_link_cover_4_l
-              name_link_cover_4_r
-              name_link_logo_symbol_l
-              name_link_logo_symbol_r
-              name_link_logo_text_l
-              name_link_logo_text_r
-              name_joint_base
-              name_joint_1
-              name_joint_2
-              name_joint_3
-              name_joint_4
-              name_joint_5
-              name_joint_6
-              name_joint_7
-              name_joint_cover_2_l
-              name_joint_cover_2_r
-              name_joint_cover_4_l
-              name_joint_cover_4_r
-              name_joint_logo_symbol_l
-              name_joint_logo_symbol_r
-              name_joint_logo_text_l
-              name_joint_logo_text_r
               color_link_base
               color_link_1
               color_link_cover_2
@@ -66,14 +34,14 @@
               *origin">
 
     <!-- crane_x7_joint_base -->
-    <joint name="${name_joint_base}" type="fixed">
+    <joint name="crane_x7_shoulder_fixed_part_mount_joint" type="fixed">
       <xacro:insert_block name="origin"/>
       <parent link="${parent}"/>
-      <child link="${name_link_base}"/>
+      <child link="crane_x7_shoulder_fixed_part_link"/>
     </joint>
 
     <!-- crane_x7_link_base -->
-    <link name="${name_link_base}">
+    <link name="crane_x7_shoulder_fixed_part_link">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
@@ -101,17 +69,17 @@
     </link>
 
     <!-- crane_x7_joint_1 -->
-    <joint name="${name_joint_1}" type="revolute">
+    <joint name="crane_x7_shoulder_fixed_part_pan_joint" type="revolute">
       <origin xyz="0 0 0.036" rpy="0 0 0"/>
       <axis xyz="0 0 1"/>
       <limit effort="10.0" velocity="${joint_velocity_limit}" lower="${joint_1_lower_limit}" upper="${joint_1_upper_limit}"/>
-      <parent link="${name_link_base}"/>
-      <child link="${name_link_1}"/>
+      <parent link="crane_x7_shoulder_fixed_part_link"/>
+      <child link="crane_x7_shoulder_revolute_part_link"/>
       <dynamics damping="1.0e-6" friction="2.0e-1"/>
     </joint>
 
     <!-- crane_x7_link_1 -->
-    <link name="${name_link_1}">
+    <link name="crane_x7_shoulder_revolute_part_link">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 ${M_PI}"/>
         <geometry>
@@ -149,17 +117,17 @@
     </link>
 
     <!-- crane_x7_joint_2 -->
-    <joint name="${name_joint_2}" type="revolute">
+    <joint name="crane_x7_shoulder_revolute_part_tilt_joint" type="revolute">
       <origin xyz="0 0 0.064" rpy="0 0 0"/>
       <axis xyz="0 -1 0"/>
       <limit effort="10.0" velocity="${joint_velocity_limit}" lower="${joint_2_lower_limit}" upper="${joint_2_upper_limit}"/>
-      <parent link="${name_link_1}"/>
-      <child link="${name_link_2}"/>
+      <parent link="crane_x7_shoulder_revolute_part_link"/>
+      <child link="crane_x7_upper_arm_fixed_part_link"/>
       <dynamics damping="1.0e-6" friction="2.0e-1"/>
     </joint>
 
     <!-- crane_x7_link_2 -->
-    <link name="${name_link_2}">
+    <link name="crane_x7_upper_arm_fixed_part_link">
       <visual>
         <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
         <geometry>
@@ -187,14 +155,14 @@
     </link>
 
     <!-- crane_x7_joint_cover_2_l -->
-    <joint name="${name_joint_cover_2_l}" type="fixed">
-      <parent link="${name_link_2}"/>
-      <child link="${name_link_cover_2_l}"/>
+    <joint name="crane_x7_upper_arm_fixed_part_joint_cover_l_joint" type="fixed">
+      <parent link="crane_x7_upper_arm_fixed_part_link"/>
+      <child link="crane_x7_upper_arm_fixed_part_joint_cover_l_link"/>
       <origin xyz="0 0.0316 0" rpy="0 0 0"/>
     </joint>
 
     <!-- crane_x7_link_cover_2_l -->
-    <link name="${name_link_cover_2_l}">
+    <link name="crane_x7_upper_arm_fixed_part_joint_cover_l_link">
       <visual>
         <origin xyz="0 0 0" rpy="-${M_PI/2} 0 0"/>
         <geometry>
@@ -214,14 +182,14 @@
     </link>
 
     <!-- crane_x7_joint_cover_2_r -->
-    <joint name="${name_joint_cover_2_r}" type="fixed">
-      <parent link="${name_link_2}"/>
-      <child link="${name_link_cover_2_r}"/>
+    <joint name="crane_x7_upper_arm_fixed_part_joint_cover_r_joint" type="fixed">
+      <parent link="crane_x7_upper_arm_fixed_part_link"/>
+      <child link="crane_x7_upper_arm_fixed_part_joint_cover_r_link"/>
       <origin xyz="0 -0.0316 0" rpy="0 0 0"/>
     </joint>
 
     <!-- crane_x7_link_cover_2_r -->
-    <link name="${name_link_cover_2_r}">
+    <link name="crane_x7_upper_arm_fixed_part_joint_cover_r_link">
       <visual>
         <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
         <geometry>
@@ -241,20 +209,20 @@
     </link>
 
     <!-- crane_x7_joint_3 -->
-    <joint name="${name_joint_3}" type="revolute">
+    <joint name="crane_x7_upper_arm_revolute_part_twist_joint" type="revolute">
       <origin xyz="0 0 0.065" rpy="0 0 0"/>
       <axis xyz="0 0 1"/>
       <limit effort="4.0"
           velocity="${joint_velocity_limit}"
           lower="${joint_3_lower_limit}"
           upper="${joint_3_upper_limit}"/>
-      <parent link="${name_link_2}"/>
-      <child link="${name_link_3}"/>
+      <parent link="crane_x7_upper_arm_fixed_part_link"/>
+      <child link="crane_x7_upper_arm_revolute_part_link"/>
       <dynamics damping="1.0e-6" friction="2.0e-1"/>
     </joint>
 
     <!-- crane_x7_link_3 -->
-    <link name="${name_link_3}">
+    <link name="crane_x7_upper_arm_revolute_part_link">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
@@ -282,19 +250,19 @@
     </link>
 
     <!-- crane_x7_joint_4 -->
-    <joint name="${name_joint_4}" type="revolute">
+    <joint name="crane_x7_upper_arm_revolute_part_rotate_joint" type="revolute">
       <origin xyz="0 0 0.185" rpy="0 0 0"/>
       <axis xyz="0 -1 0"/>
       <limit effort="4.0"
           velocity="${joint_velocity_limit}"
           lower="${joint_4_lower_limit}"
           upper="${joint_4_upper_limit}"/>
-      <parent link="${name_link_3}"/>
-      <child link="${name_link_4}"/>
+      <parent link="crane_x7_upper_arm_revolute_part_link"/>
+      <child link="crane_x7_lower_arm_fixed_part_link"/>
       <dynamics damping="1.0e-6" friction="2.0e-1"/>
     </joint>
     <!-- crane_x7_link_4 -->
-    <link name="${name_link_4}">
+    <link name="crane_x7_lower_arm_fixed_part_link">
       <visual>
         <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
         <geometry>
@@ -322,14 +290,14 @@
     </link>
 
     <!-- crane_x7_joint_cover_4_l -->
-    <joint name="${name_joint_cover_4_l}" type="fixed">
-      <parent link="${name_link_4}"/>
-      <child link="${name_link_cover_4_l}"/>
+    <joint name="crane_x7_lower_arm_fixed_part_joint_cover_l_joint" type="fixed">
+      <parent link="crane_x7_lower_arm_fixed_part_link"/>
+      <child link="crane_x7_lower_arm_fixed_part_joint_cover_l_link"/>
       <origin xyz="0 0.025 0" rpy="0 0 0"/>
     </joint>
 
     <!-- crane_x7_link_cover_4_l -->
-    <link name="${name_link_cover_4_l}">
+    <link name="crane_x7_lower_arm_fixed_part_joint_cover_l_link">
       <visual>
         <origin xyz="0 0 0" rpy="-${M_PI/2} 0 0"/>
         <geometry>
@@ -349,14 +317,14 @@
     </link>
 
     <!-- crane_x7_joint_cover_4_r -->
-    <joint name="${name_joint_cover_4_r}" type="fixed">
-      <parent link="${name_link_4}"/>
-      <child link="${name_link_cover_4_r}"/>
+    <joint name="crane_x7_lower_arm_fixed_part_joint_cover_r_joint" type="fixed">
+      <parent link="crane_x7_lower_arm_fixed_part_link"/>
+      <child link="crane_x7_lower_arm_fixed_part_joint_cover_r_link"/>
       <origin xyz="0 -0.025 0" rpy="0 0 0"/>
     </joint>
 
     <!-- crane_x7_link_cover_4_r -->
-    <link name="${name_link_cover_4_r}">
+    <link name="crane_x7_lower_arm_fixed_part_joint_cover_r_link">
       <visual>
         <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
         <geometry>
@@ -376,17 +344,17 @@
     </link>
 
     <!-- crane_x7_joint_5 -->
-    <joint name="${name_joint_5}" type="revolute">
+    <joint name="crane_x7_lower_arm_fixed_part_joint" type="revolute">
       <origin xyz="0 0 0.121" rpy="0 0 0"/>
       <axis xyz="0 0 1"/>
       <limit effort="4.0" velocity="${joint_velocity_limit}" lower="${joint_5_lower_limit}" upper="${joint_5_upper_limit}"/>
-      <parent link="${name_link_4}"/>
-      <child link="${name_link_5}"/>
+      <parent link="crane_x7_lower_arm_fixed_part_link"/>
+      <child link="crane_x7_lower_arm_revolute_part_link"/>
       <dynamics damping="1.0e-6" friction="2.0e-1"/>
     </joint>
 
     <!-- crane_x7_link_5 -->
-    <link name="${name_link_5}">
+    <link name="crane_x7_lower_arm_revolute_part_link">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
@@ -415,28 +383,20 @@
 
     <!-- logo -->
     <xacro:crane_x7_logos 
-      parent="${name_link_5}"
-      name_link_logo_symbol_l="${name_link_logo_symbol_l}"
-      name_link_logo_symbol_r="${name_link_logo_symbol_r}"
-      name_link_logo_text_l="${name_link_logo_text_l}"
-      name_link_logo_text_r="${name_link_logo_text_r}"
-      name_joint_logo_symbol_l="${name_joint_logo_symbol_l}"
-      name_joint_logo_symbol_r="${name_joint_logo_symbol_r}"
-      name_joint_logo_text_l="${name_joint_logo_text_l}"
-      name_joint_logo_text_r="${name_joint_logo_text_r}"/>
+      parent="crane_x7_lower_arm_revolute_part_link"/>
 
     <!-- crane_x7_joint_6 -->
-    <joint name="${name_joint_6}" type="revolute">
+    <joint name="crane_x7_lower_arm_revolute_part_joint" type="revolute">
       <origin xyz="0 0 0.129" rpy="0 0 0"/>
       <axis xyz="0 -1 0"/>
       <limit effort="4.0" velocity="${joint_velocity_limit}" lower="${joint_6_lower_limit}" upper="${joint_6_upper_limit}"/>
-      <parent link="${name_link_5}"/>
-      <child link="${name_link_6}"/>
+      <parent link="crane_x7_lower_arm_revolute_part_link"/>
+      <child link="crane_x7_wrist_link"/>
       <dynamics damping="1.0e-6" friction="2.0e-1"/>
     </joint>
 
     <!-- crane_x7_link_6 -->
-    <link name="${name_link_6}">
+    <link name="crane_x7_wrist_link">
       <visual>
         <origin xyz="0 0 0" rpy="${M_PI/2} 0 0"/>
         <geometry>
@@ -464,12 +424,12 @@
     </link>
 
     <!-- crane_x7_joint_7 -->
-    <joint name="${name_joint_7}" type="revolute">
+    <joint name="crane_x7_wrist_joint" type="revolute">
       <origin xyz="0 0 0.019" rpy="0 0 0"/>
       <axis xyz="0 0 1"/>
       <limit effort="4.0" velocity="${joint_velocity_limit}" lower="${joint_7_lower_limit}" upper="${joint_7_upper_limit}"/>
-      <parent link="${name_link_6}"/>
-      <child link="${name_link_7}"/>
+      <parent link="crane_x7_wrist_link"/>
+      <child link="crane_x7_gripper_base_link"/>
       <dynamics damping="1.0e-6" friction="2.0e-1"/>
     </joint>
   </xacro:macro>
