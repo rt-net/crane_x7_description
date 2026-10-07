@@ -8,25 +8,22 @@
 
   <xacro:macro name="crane_x7_mounting_plate"
       params="parent
-              name_link_mounting_plate
-              name_joint_mounting_plate
-              color
               *origin">
 
-    <joint name="${name_joint_mounting_plate}" type="fixed">
+    <joint name="crane_x7_mounting_plate_joint" type="fixed">
       <xacro:insert_block name="origin"/>
       <parent link="${parent}"/>
-      <child link="${name_link_mounting_plate}"/>
+      <child link="crane_x7_mounting_plate_link"/>
     </joint>
 
-    <link name="${name_link_mounting_plate}">
+    <link name="crane_x7_mounting_plate_link">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
           <mesh filename="package://crane_x7_description/meshes/visual/mounting_plate.stl"
               scale="1 1 1"/>
         </geometry>
-        <material name="${color}"/>
+        <material name="black"/>
       </visual>
 
       <collision>
